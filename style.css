@@ -1,16 +1,16 @@
-/* ==========================================
+/* =========================================================================
    VARIÁVEIS & RESET GLOBAL (Paleta Light Mode)
-   ========================================== */
+   ========================================================================= */
 :root {
   /* DESTAQUES (Contraste Tech para fundo claro) */
   --cyan: #00bfa5;           
-  --cyan-hover: #00897b; /* Mapeado a partir do teu antigo cyan-dim */      
+  --cyan-hover: #00897b;      
   --cyan-glow: rgba(0, 191, 165, 0.08);
 
   /* FUNDOS (Tons claros e limpos) */
   --dark1: #f8fafc;          /* Fundo principal (Slate claro) */
   --dark2: #ffffff;          /* Fundo secundário (Branco puro para seções) */
-  --dark3: #f1f5f9;          /* Fundo dos cards e elementos internos */
+  --dark3: #f1f5f9;          /* Fundo dos cards e elements internos */
   --dark4: #e2e8f0;          /* Hover dos cards */
 
   /* TEXTOS */
@@ -40,9 +40,9 @@ body {
     background-color: var(--dark1);
 }
 
-/* ==========================================
+/* =========================================================================
    COMPONENTES REUTILIZÁVEIS
-   ========================================== */
+   ========================================================================= */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -86,7 +86,7 @@ body {
 .btn-primary {
     display: inline-block;
     background-color: var(--cyan);
-    color: var(--dark2); /* Texto branco para contraste no verde-água */
+    color: var(--dark2);
     padding: 0.85rem 1.75rem;
     border-radius: 6px;
     font-weight: 600;
@@ -115,22 +115,26 @@ body {
     border-color: var(--cyan);
 }
 
-/* ==========================================
+/* =========================================================================
    BARRA DE NAVEGAÇÃO
-   ========================================== */
+   ========================================================================= */
 nav {
-    display: table;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--border);
     background-color: var(--dark1);
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .nav-logo {
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text);
     font-weight: 800;
@@ -139,20 +143,15 @@ nav {
 
 .nav-logo img {
     height: 32px;
-    vertical-align: middle;
     margin-right: 0.5rem;
 }
 
 .nav-links {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
     list-style: none;
-}
-
-.nav-links li {
-    display: inline-block;
-    margin-left: 1.75rem;
+    gap: 1.75rem;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -181,9 +180,90 @@ nav {
     color: var(--dark2);
 }
 
-/* ==========================================
+/* =========================================================================
+   SELETOR DE IDIOMAS
+   ========================================================================= */
+.lang-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-text-btn {
+    background: transparent;
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+}
+
+.lang-text-btn:hover {
+    color: var(--text);
+}
+
+.lang-text-btn .arrow-down {
+    font-size: 0.55rem;
+    color: var(--border-bright);
+    transition: transform 0.2s ease;
+}
+
+.lang-dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    min-width: 55px;
+    z-index: 1000;
+    padding: 2px 0;
+    margin-top: 5px;
+}
+
+.lang-dropdown-container.show .lang-dropdown-menu {
+    display: block;
+}
+
+.lang-dropdown-container.show .arrow-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-item {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: 6px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--dark3);
+    color: var(--text);
+}
+
+.dropdown-item.active {
+    color: var(--dark2);
+    background-color: var(--cyan);
+}
+
+/* =========================================================================
    HERO SECTION
-   ========================================== */
+   ========================================================================= */
 #home {
     position: relative;
     padding: 7rem 2rem 5rem 2rem;
@@ -225,23 +305,24 @@ nav {
 }
 
 .hero-container {
-    display: table;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
     width: 100%;
 }
 
 .hero-text-side {
-    display: table-cell;
-    width: 55%;
-    vertical-align: middle;
-    padding-right: 3rem;
+    flex: 1 1 55%;
 }
 
 .hero-kicker {
+    display: block;
     font-family: 'JetBrains Mono', monospace;
     color: var(--cyan-hover);
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
+    line-height: 1.4;
 }
 
 .hero-title {
@@ -271,13 +352,15 @@ nav {
 }
 
 .hero-metrics {
-    display: table;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin-bottom: 2.5rem;
 }
 
 .hero-metric {
-    display: table-cell;
+    flex: 1;
 }
 
 .hm-val {
@@ -295,25 +378,23 @@ nav {
 }
 
 .hm-divider {
-    display: table-cell;
     width: 1px;
+    height: 40px;
     background-color: var(--border);
-    padding: 0 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .hero-actions a {
     margin-right: 1rem;
 }
 
-/* TERMINAL HERO (Mantém fundo escuro para realismo técnico do dev) */
 .hero-terminal-side {
-    display: table-cell;
-    width: 45%;
-    vertical-align: middle;
+    flex: 1 1 45%;
+    min-width: 320px;
 }
 
 .hero-terminal {
-    background-color: #0f172a; /* Slate 900 escuro para contraste do código */
+    background-color: #0f172a; 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
@@ -323,7 +404,9 @@ nav {
 .terminal-topbar {
     background-color: #1e293b;
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .terminal-dots span {
@@ -339,11 +422,9 @@ nav {
 .terminal-dots span:nth-child(3) { background-color: #27c93f; }
 
 .terminal-title {
-    float: right;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: #94a3b8;
-    margin-top: -12px;
 }
 
 .terminal-body {
@@ -360,7 +441,6 @@ nav {
 .t-key { color: #94a3b8; }
 .t-ok { color: #34d399; }
 
-/* ANIMAÇÃO DO TERMINAL */
 .t-line { opacity: 0; transform: translateY(5px); animation: fadeInTerminal 0.3s forwards; }
 .t-delay-1 { animation-delay: 0.4s; }
 .t-delay-2 { animation-delay: 0.9s; }
@@ -385,9 +465,9 @@ nav {
     50% { opacity: 0; }
 }
 
-/* ==========================================
+/* =========================================================================
    SEÇÃO 1: SERVIÇOS
-   ========================================== */
+   ========================================================================= */
 .services-section {
     padding: 6rem 2rem;
     background-color: var(--dark2);
@@ -401,19 +481,18 @@ nav {
 }
 
 .services-grid-two {
-    display: table;
+    display: flex;
+    gap: 0;
     width: 100%;
-    table-layout: fixed;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .service-card {
-    display: table-cell;
-    width: 50%;
+    flex: 1;
     background-color: var(--dark3);
     border: 1px solid var(--border);
     padding: 3rem;
-    border-radius: 8px;
-    vertical-align: top;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -423,13 +502,13 @@ nav {
 }
 
 .services-grid-two .service-card:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .services-grid-two .service-card:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     border-left: none;
 }
 
@@ -489,9 +568,168 @@ nav {
     line-height: 1.6;
 }
 
-/* ==========================================
+/* =========================================================================
+   ESTILIZAÇÃO PREMIUM DE CASOS DE ESTUDO (PORTFÓLIO)
+   ========================================================================= */
+.premium-cases-section {
+    padding: 10rem 2rem; 
+    background-color: var(--dark1);
+    border-top: 1px solid var(--border);
+}
+
+.cases-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem; 
+    margin-top: 4rem;
+}
+
+.case-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Mecanismo de simetria 50/50 em Desktop */
+.case-row > div {
+    flex: 1 1 50%;
+    width: 100%;
+}
+
+.case-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.case-text-side {
+    flex: 1;
+}
+
+.case-project-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.case-project-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.case-project-desc {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* =========================================================================
+   SISTEMA DE ILUSTRAÇÕES PARA IMAGENS REAIS (100% COMPLETAS SEM CORTAR)
+   ========================================================================= */
+.case-image-side {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark2) 0%, var(--dark3) 100%);
+    height: 340px;            /* Altura base confortável para Desktop */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;            /* Margem de respiro interna para a imagem */
+}
+
+/* Grid de linhas de fundo tecnológico */
+.case-image-side::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Força a imagem real a aparecer por completo dentro do quadro */
+.case-image-side img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;      /* GARANTE QUE A IMAGEM NUNCA SEJA CORTADA */
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+/* Remove terminantemente qualquer pseudo-elemento de texto antigo em qualquer classe */
+.case-image-side::after,
+.construction-img::after,
+.missions-img::after,
+.dating-img::after,
+.ngo-img::after {
+    display: none !important;
+    content: "" !important;
+}
+
+/* Cores de destaque nas bordas para identidade visual */
+.construction-img { 
+    border-left: 4px solid var(--cyan); 
+    background: radial-gradient(circle at 20% 30%, rgba(0, 191, 165, 0.12) 0%, transparent 70%), linear-gradient(135deg, var(--dark2) 0%, var(--dark3) 100%);
+}
+.missions-img { 
+    border-left: 4px solid #3B82F6; 
+    background: radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.12) 0%, transparent 60%), linear-gradient(135deg, var(--dark2) 0%, var(--dark3) 100%);
+}
+
+/* O Bloco Antes/Depois */
+.transformation-box {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--dark2);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.t-before, .t-after {
+    flex: 1;
+}
+
+.transformation-box strong {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.t-before strong { color: #ef4444; } 
+.t-after strong { color: var(--cyan-hover); } 
+
+.transformation-box ul {
+    list-style: none;
+}
+
+.transformation-box li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+
+.t-before li::before { content: "✕ "; color: #ef4444; }
+.t-after li::before { content: "✓ "; color: var(--cyan-hover); }
+
+/* =========================================================================
    SEÇÃO 2: PILARES TÉCNICOS
-   ========================================== */
+   ========================================================================= */
 .pillars-section {
     background: var(--dark1); 
     border-top: 1px solid var(--border); 
@@ -499,21 +737,18 @@ nav {
 }
 
 .pillars-grid {
-    display: table;
+    display: flex;
+    gap: 1.5rem;
     width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 1.5rem 0;
 }
 
 .pillar-card {
-    display: table-cell;
+    flex: 1;
     background: var(--dark2);
     border: 1px solid var(--border);
     padding: 2rem;
     border-radius: 8px;
-    width: 33.33%;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.2s ease;
 }
 
 .pillar-card:hover {
@@ -541,9 +776,9 @@ nav {
     line-height: 1.6;
 }
 
-/* ==========================================
+/* =========================================================================
    SEÇÃO 3: OFERTA GRATUITA
-   ========================================== */
+   ========================================================================= */
 .demo-section {
     padding: 6rem 2rem;
     background-color: var(--dark2);
@@ -575,21 +810,18 @@ nav {
 }
 
 .demo-grid {
-    display: table;
+    display: flex;
+    gap: 1.5rem;
     width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 1.5rem 0;
     text-align: left;
 }
 
 .demo-box {
-    display: table-cell;
+    flex: 1;
     background-color: var(--dark3);
     border: 1px solid var(--border);
     padding: 2rem;
     border-radius: 6px;
-    vertical-align: top;
 }
 
 .demo-box h4 {
@@ -605,19 +837,13 @@ nav {
     line-height: 1.6;
 }
 
-.demo-box em {
-    color: var(--cyan-hover);
-    font-style: normal;
-    font-weight: 600;
-}
-
 .demo-action-btn {
     margin-top: 3rem;
 }
 
-/* ==========================================
-   SEÇÃO 4: CASOS DE USO / SEGMENTOS
-   ========================================== */
+/* =========================================================================
+   SEÇÃO 4: CASOS DE USO
+   ========================================================================= */
 .segments-section {
     padding: 6rem 2rem; 
     background: var(--dark1); 
@@ -626,18 +852,15 @@ nav {
 }
 
 .segments-grid {
-    display: table;
+    display: flex;
+    gap: 2rem;
     width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 2rem 0;
 }
 
 .segment-item {
-    display: table-cell;
+    flex: 1;
     border-left: 2px solid var(--cyan);
     padding-left: 1.5rem;
-    vertical-align: top;
 }
 
 .segment-item-title {
@@ -653,9 +876,9 @@ nav {
     line-height: 1.5;
 }
 
-/* ==========================================
+/* =========================================================================
    SEÇÃO 5: CRESCIMENTO E METODOLOGIA
-   ========================================== */
+   ========================================================================= */
 #projetos {
     padding: 6rem 2rem;
     background-color: var(--dark2);
@@ -672,26 +895,21 @@ nav {
 }
 
 .growth-grid {
-    display: table;
+    display: flex;
+    gap: 2rem;
     width: 100%;
-    table-layout: fixed;
 }
 
 .growth-card {
-    display: table-cell;
-    padding: 0 2rem;
-    vertical-align: top;
+    flex: 1;
 }
-
-.growth-grid .growth-card:first-child { padding-left: 0; }
-.growth-grid .growth-card:last-child { padding-right: 0; }
 
 .growth-card-num {
     display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 2.5rem;
     font-weight: 800;
-    color: var(--dark4); /* Tom sutil para o número de fundo em Light Mode */
+    color: var(--dark4); 
     line-height: 1;
     margin-bottom: 1rem;
 }
@@ -718,9 +936,9 @@ nav {
     line-height: 1.6;
 }
 
-/* ==========================================
+/* =========================================================================
    SEÇÃO 6: PERGUNTAS FREQUENTES (FAQ)
-   ========================================== */
+   ========================================================================= */
 .faq-section {
     padding: 6rem 2rem; 
     background: var(--dark1); 
@@ -730,10 +948,6 @@ nav {
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
-}
-
-.faq-list {
-    display: block;
 }
 
 .faq-card {
@@ -758,9 +972,9 @@ nav {
     line-height: 1.5;
 }
 
-/* ==========================================
+/* =========================================================================
    SEÇÃO 7: CONTATO (CTA)
-   ========================================== */
+   ========================================================================= */
 #contato {
     padding: 6rem 2rem;
     text-align: center;
@@ -792,13 +1006,9 @@ nav {
     margin-bottom: 2.5rem;
 }
 
-.cta-actions a {
-    margin: 0 0.5rem;
-}
-
-/* ==========================================
+/* =========================================================================
    DISCLAIMER & FOOTER
-   ========================================== */
+   ========================================================================= */
 .terms-disclaimer-section {
     background: var(--dark3); 
     border-top: 1px solid var(--border); 
@@ -817,18 +1027,22 @@ nav {
 }
 
 footer {
-    display: table;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 1.5rem 2rem;
     border-top: 1px solid var(--border);
     background-color: var(--dark2);
+    gap: 2rem;
 }
 
 .footer-logo {
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text);
     font-weight: 800;
@@ -836,20 +1050,14 @@ footer {
 
 .footer-logo img {
     height: 24px;
-    vertical-align: middle;
     margin-right: 0.5rem;
 }
 
 .footer-links {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
+    display: flex;
     list-style: none;
-}
-
-.footer-links li {
-    display: inline-block;
-    margin-left: 1.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -863,19 +1071,52 @@ footer {
     color: var(--text);
 }
 
-.footer-copy {
+.footer-projects {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.projects-title {
+    color: var(--cyan-hover);
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.footer-projects a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.footer-projects a:hover {
+    color: var(--text);
+}
+
+.projects-sep {
+    color: var(--border-bright);
+    padding: 0 0.6rem;
+}
+
+footer .footer-copy {
     display: block;
+    width: 100%;
     text-align: center;
     color: var(--text-dim);
     opacity: 0.7;
     font-size: 0.8rem;
-    margin-top: 3rem;
-    width: 100%;
+    margin-top: 1rem;
+    padding-right: 60px;
 }
 
-/* ==========================================
-   BOTAO FLUTUANTE WHATSAPP (Ajustado para destaque claro)
-   ========================================== */
+/* =========================================================================
+   BOTÃO FLUTUANTE WHATSAPP
+   ========================================================================= */
 .wa-float {
     position: fixed;
     width: 56px;
@@ -886,9 +1127,12 @@ footer {
     color: #FFF;
     border-radius: 50%;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
+    box-shadow: 0 4px 15 rgba(15, 23, 42, 0.15);
     z-index: 100;
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wa-float:hover {
@@ -899,52 +1143,118 @@ footer {
     width: 28px;
     height: 28px;
     fill: currentColor;
-    margin-top: 14px;
 }
 
-/* ==========================================
-   RESPONSIVIDADE BÁSICA (MOBILE)
-   ========================================== */
-@media (max-width: 768px) {
-    nav, .nav-logo, .nav-links,
-    .hero-container, .hero-text-side, .hero-terminal-side,
-    .services-grid-two, .service-card,
-    .pillars-grid, .pillar-card,
-    .demo-grid, .demo-box,
-    .segments-grid, .segment-item,
-    .growth-grid, .growth-card,
-    footer, .footer-logo, .footer-links {
-        display: block !important;
-        width: 100% !important;
-        text-align: left !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        border-spacing: 0 !important;
+/* =========================================================================
+   RESPONSIVIDADE COMPLETA E LIMPA
+   ========================================================================= */
+@media (max-width: 1100px) {
+    .case-row {
+        gap: 2rem;
     }
-    
-    .nav-links li {
-        display: block;
-        margin: 1rem 0;
+    .case-image-side {
+        height: 280px; /* Altura ajustada proporcionalmente */
     }
-    
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+    }
     .hero-text-side {
-        margin-bottom: 3rem;
+        width: 100%;
         padding-right: 0;
     }
+    .hero-terminal-side {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .nav-links li, .nav-links .nav-cta {
+        width: 100%;
+    }
+    
+    .nav-links .nav-cta {
+        text-align: center;
+        display: block;
+    }
+
+    .lang-dropdown-menu {
+        position: relative;
+        right: auto;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        display: flex;
+        gap: 15px;
+        margin-top: 0.25rem;
+        padding-left: 0;
+    }
+
+    .dropdown-item {
+        width: auto;
+        padding: 4px 8px;
+        border-radius: 4px;
+        background-color: var(--dark3);
+    }
+
+    .services-grid-two, .pillars-grid, .demo-grid, .segments-grid, .growth-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .services-grid-two .service-card:first-child,
     .services-grid-two .service-card:last-child {
         border-radius: 8px !important;
-        margin-bottom: 1.5rem;
         border: 1px solid var(--border) !important;
     }
-    
-    .pillar-card, .demo-box, .segment-item, .growth-card {
-        margin-bottom: 1.5rem;
+
+    .cases-wrapper {
+        gap: 4rem !important;
     }
-    
-    .footer-links li {
-        display: block;
-        margin: 0.75rem 0;
+
+    .case-row, .case-row.row-reverse {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    /* ESSENCIAL: Garante o respiro da imagem e a visibilidade sem cortes em telemóveis */
+    .case-image-side {
+        height: 240px !important;
+        padding: 10px !important;
+    }
+
+    .hero-metrics {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hm-divider {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
