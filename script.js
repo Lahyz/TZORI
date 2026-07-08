@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pt: {
             "nav-services": "Serviços",
             "nav-tech": "Tecnologia",
-            "nav-demo": "Análise & Demo",
+            "nav-demo": "Diagnóstico",
             "nav-apps": "Aplicações",
-            "nav-pipeline": "Esteira",
+            "nav-pipeline": "Metodologia",
             "nav-faq": "FAQ",
             "nav-cta": "CONTATO",
             "hero-kicker": "// desenvolvimento web estruturado · sistemas sob medida · engenharia de deploy",
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-copy": "© 2026 TZORI — Transformação Digital e Sistemas Empresariais. <br> Todos os direitos reservados."
         },
         en: {
-            "nav-services": "Services", "nav-tech": "Technology", "nav-demo": "Analysis & Demo", "nav-apps": "Applications", "nav-pipeline": "Pipeline", "nav-faq": "FAQ", "nav-cta": "CONTACT",
+            "nav-services": "Services", "nav-tech": "Technology", "nav-demo": "Diagnosis", "nav-apps": "Applications", "nav-pipeline": "Methodology", "nav-faq": "FAQ", "nav-cta": "CONTACT",
             "hero-kicker": "// structured web development · custom systems · deploy engineering",
             "hero-title": "We transform business processes into <em>proprietary systems</em>.",
             "hero-subtitle": "Eliminate spreadsheets, manual tasks and unorganized operations. We develop custom software that centralizes information, automates processes and gives you total control.",
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-copy": "© 2026 TZORI — Digital Transformation & Business Systems. <br> All rights reserved."
         },
         es: {
-            "nav-services": "Servicios", "nav-tech": "Tecnología", "nav-demo": "Análisis & Demo", "nav-apps": "Aplicaciones", "nav-pipeline": "Línea", "nav-faq": "FAQ", "nav-cta": "CONTACTO",
+            "nav-services": "Servicios", "nav-tech": "Tecnología", "nav-demo": "Diagnóstico", "nav-apps": "Aplicaciones", "nav-pipeline": "Metodología", "nav-faq": "FAQ", "nav-cta": "CONTACTO",
             "hero-kicker": "// desarrollo web estructurado · sistemas a medida · ingeniería de despliegue",
             "hero-title": "Transformamos procesos empresariales en <em>sistemas propios</em>.",
             "hero-subtitle": "Elimine planillas y tareas manuales. Desarrollamos software a medida que centraliza información, automatiza procesos y le da control total.",
@@ -253,4 +253,61 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownContainer.classList.remove('show');
         });
     }
+
+    // =========================================================================
+    // FAQ ACCORDION
+    // =========================================================================
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.faq-card');
+            const wrap = card.querySelector('.faq-answer-wrap');
+            const isOpen = card.classList.contains('open');
+
+            // Fecha todos
+            document.querySelectorAll('.faq-card').forEach(c => {
+                c.classList.remove('open');
+                c.querySelector('button').setAttribute('aria-expanded', 'false');
+                c.querySelector('.faq-answer-wrap').style.maxHeight = '0';
+            });
+
+            // Abre o clicado (se estava fechado)
+            if (!isOpen) {
+                card.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                wrap.style.maxHeight = wrap.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // =========================================================================
+    // SCROLL REVEAL
+    // =========================================================================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 70);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+        '.service-card, .pillar-card, .growth-card, .demo-box, .segment-item, .faq-card, .case-row'
+    ).forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // =========================================================================
+    // NAV STICKY — escurece borda ao rolar
+    // =========================================================================
+    const navEl = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            navEl.style.borderBottomColor = 'rgba(0,212,184,0.2)';
+        } else {
+            navEl.style.borderBottomColor = 'rgba(255,255,255,0.07)';
+        }
+    }, { passive: true });
+
 });
