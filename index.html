@@ -1,448 +1,471 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TZORI — Engenharia de Software, Segurança & SEO</title>
+    <title>Tzori.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&family=Playfair+Display:ital,wght@0,900;1,900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="nav-logo">
-            <img src="imagens/logo.webp" alt="TZORI" onerror="this.style.display='none'"> TZORI
-        </a>
+    <header class="header-container">
+        <nav class="navbar">
+            <a href="#" class="brand-logo">Tzori<span>.</span></a>
+            <ul class="nav-menu">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="#contato" class="btn-diagnostico">
+                <span class="icon-chat">💬</span> Diagnóstico Gratuito
+            </a>
+        </nav>
         
-        <ul class="nav-links">
-            <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
-            <li><a href="#tecnologia" data-i18n="nav-tech">Tecnologia</a></li>
-            <li><a href="#demo" data-i18n="nav-demo">Diagnóstico</a></li>
-            <li><a href="#aplicacoes" data-i18n="nav-apps">Aplicações</a></li>
-            <li><a href="#projetos" data-i18n="nav-pipeline">Metodologia</a></li>
-            <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
-            
-            <li class="lang-dropdown-container" id="langDropdown">
-                <button class="lang-text-btn" type="button" aria-label="Mudar idioma">
-                    <span id="activeLang">PT</span> <span class="arrow-down">▼</span>
-                </button>
-                <div class="lang-dropdown-menu">
-                    <button class="dropdown-item active" data-lang="PT">PT</button>
-                    <button class="dropdown-item" data-lang="EN">EN</button>
-                    <button class="dropdown-item" data-lang="ES">ES</button>
-                </div>
-            </li>
+        <div class="sub-header">
+            <span class="tech-tags">SOFTWARE ENGINEERING · SECURITY · SEO</span>
+            <span class="location-tags">LISBOA · PORTO · REMOTE</span>
+        </div>        
+    </header>
 
-            <li><a href="#contato" class="nav-cta" data-i18n="nav-cta">CONTATO</a></li>
-        </ul>
-    </nav>
-
-    <section id="home">
-        <div class="hero-bg">
-            <div class="hero-orb orb1"></div>
-            <div class="hero-orb orb2"></div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-text-side">
-                <span class="hero-kicker" data-i18n="hero-kicker">// desenvolvimento web estruturado · sistemas sob medida · engenharia de deploy</span>
-                <h1 class="hero-title" data-i18n="hero-title">Transformamos processos empresariais em <em>sistemas próprios</em>.</h1>
-
-                <p class="hero-subtitle" data-i18n="hero-subtitle">
-                    Elimine planilhas, tarefas manuais e operações desorganizadas.
-                    Desenvolvemos sistemas personalizados que centralizam informações,
-                    automatizam processos e dão total controlo sobre a sua empresa.
+    <main class="hero-split">
+        <section class="hero-left">
+            <div class="hero-content">
+                <h1 class="main-title">
+                    Processos <br>
+                    <span class="italic-orange">viram</span> <br>
+                    sistemas.
+                </h1>
+                <p class="hero-description">
+                    Eliminamos planilhas, tarefas manuais e operações desorganizadas. 
+                    Sistemas centralizados feitos sob medida para o seu negócio.
                 </p>
-                <div class="hero-metrics">
-                    <div class="hero-metric">
-                        <span class="hm-val" data-i18n="metric-1-val">-80%</span>
-                        <span class="hm-label" data-i18n="metric-1-lbl">Retrabalho</span>
-                    </div>
-                    <div class="hm-divider"></div>
-                    <div class="hero-metric">
-                        <span class="hm-val" data-i18n="metric-2-val">+</span>
-                        <span class="hm-label" data-i18n="metric-2-lbl">Produtividade</span>
-                    </div>
-                    <div class="hm-divider"></div>
-                    <div class="hero-metric">
-                        <span class="hm-val" data-i18n="metric-3-val">100%</span>
-                        <span class="hm-label" data-i18n="metric-3-lbl">Operação integrada</span>
-                    </div>
-                </div>
-
                 <div class="hero-actions">
-                    <a href="#contato" class="btn-primary" data-i18n="btn-hero-primary">Solicitar Diagnóstico Gratuito</a>
-                    <a href="#servicos" class="btn-secondary" data-i18n="btn-hero-secondary">Ver Serviços</a>
+                    <a href="#contato" class="btn-solid-dark">Solicitar Diagnóstico &rarr;</a>
+                    <a href="#servicos" class="btn-outline-dark">Ver Serviços</a>
                 </div>
             </div>
-            
-            <div class="hero-terminal-side">
-                <div class="hero-terminal">
-                    <div class="terminal-topbar">
-                        <div class="terminal-dots">
-                            <span></span><span></span><span></span>
+
+            <div class="metrics-row">
+                <div class="metric-item">
+                    <span class="metric-number">-80%</span>
+                    <span class="metric-label">RETRABALHO</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <span class="metric-number">+3×</span>
+                    <span class="metric-label">PRODUTIVIDADE</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">INTEGRADO</span>
+                </div>
+            </div>
+        </section>
+
+        <aside class="hero-right">
+            <div class="hero-right-bg"></div>
+            <div class="right-content">
+                <div class="section-top">
+                    <span class="right-kicker">// PROJETOS ATIVOS</span>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <div class="project-meta">
+                                <span class="proj-number">01</span>
+                                <span class="proj-year">2025</span>
+                            </div>
+                            <h4 class="proj-title">Gestão de Obras Pro</h4>
+                            <span class="proj-category">Construção Civil</span>
                         </div>
-                        <span class="terminal-title" data-i18n="terminal-title">tzori — build & deploy status</span>
+                        <div class="project-item">
+                            <div class="project-meta">
+                                <span class="proj-number">02</span>
+                                <span class="proj-year">2025</span>
+                            </div>
+                            <h4 class="proj-title">Portal Internacional de Missões</h4>
+                            <span class="proj-category">ONG Global</span>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-meta">
+                                <span class="proj-number">03</span>
+                                <span class="proj-year">2024</span>
+                            </div>
+                            <h4 class="proj-title">Portal Institucional ONG</h4>
+                            <span class="proj-category">Terceiro Setor</span>
+                        </div>
                     </div>
-                    <div class="terminal-body">
-                        <div class="t-line t-delay-1"><span class="t-prompt">$</span><span class="t-cmd">tzori build --project</span> <span class="t-val">gestao-obras</span></div>
-                        <div class="t-line t-delay-2"><span class="t-arrow">→</span><span class="t-key" data-i18n="terminal-key1">módulos</span> <span class="t-ok" data-i18n="terminal-line1">✓ Ponto, Alojamento & Stock integrados</span></div>
-                        <div class="t-line t-delay-3"><span class="t-arrow">→</span><span class="t-key" data-i18n="terminal-key2">analytics</span> <span class="t-ok" data-i18n="terminal-line2">✓ Gráficos consolidados & Planilhas sincronizadas</span></div>
-                        <div class="t-line t-delay-4"><span class="t-prompt">$</span><span class="t-cmd">tzori deploy --target</span> <span class="t-val">prod-server</span></div>
-                        <div class="t-line t-delay-5"><span class="t-arrow">→</span><span class="t-key" data-i18n="terminal-key3">status</span> <span class="t-ok" data-i18n="terminal-line3">✓ PROJETO ONLINE (Legacy Code Corrigido com Sucesso)</span> <span class="t-cursor"></span></div>
+                </div>
+
+                <div class="lighthouse-container">
+                    <span class="lighthouse-kicker">// LIGHTHOUSE SCORE</span>
+                    <div class="score-display">
+                        <span class="score-main">100</span>
+                        <span class="score-sub">/100</span>
+                    </div>
+                    <span class="score-label">Core Web Vitals — Google</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="manifesto-banner">
+            <div class="manifesto-content">
+                <h2 class="manifesto-title">Não vendemos software.</h2>
+                <p class="manifesto-text">Vendemos controle, produtividade e escalabilidade.</p>
+                <span class="manifesto-date">© 2026 TZORI</span>
+            </div>
+        </div>
+
+
+     <!-- SERVIÇOS -->
+    <section id="servicos" class="section-row">
+        <div class="section-left-col">
+            <span class="section-num">// 01 — SERVIÇOS</span>
+            <h2 class="section-heading-serif">O que<br>fazemos.</h2>
+        </div>
+        <div class="section-right-col">
+            <div class="list-services">
+                <div class="list-item">
+                    <span class="item-index">01</span>
+                    <div class="item-body">
+                        <h3 class="item-title">Digitalização & Automação</h3>
+                        <p class="item-desc">Mapeamos e centralizamos operações que vivem em planilhas e processos manuais. O resultado é um sistema próprio que elimina retrabalho e gera visibilidade total.</p>
+                        <div class="item-tags">
+                            <span class="tech-tag">Processos</span>
+                            <span class="tech-tag">Automação</span>
+                            <span class="tech-tag">Integração</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="item-index">02</span>
+                    <div class="item-body">
+                        <h3 class="item-title">Evolução de Sistemas</h3>
+                        <p class="item-desc">Corrigimos performance, adicionamos funcionalidades e integramos APIs em sistemas legados. Sem reescrever do zero — sem perder o que já funciona.</p>
+                        <div class="item-tags">
+                            <span class="tech-tag">Legacy Code</span>
+                            <span class="tech-tag">Performance</span>
+                            <span class="tech-tag">Integrações</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="item-index">03</span>
+                    <div class="item-body">
+                        <h3 class="item-title">Engenharia de Deploy</h3>
+                        <p class="item-desc">Infraestrutura estruturada sob contas do próprio cliente. CI/CD, containers, monitoramento e SLA definido. Controle total, zero lock-in.</p>
+                        <div class="item-tags">
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Cloud</span>
+                            <span class="tech-tag">SLA</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="services-section">
-        <div class="services-header">
-            <span class="section-tag" data-i18n="services-tag">Engenharia de Ponta</span>
-            <h2 class="section-title" data-i18n="services-title">Transformamos a forma como sua empresa opera</h2>
-            <p class="section-desc" data-i18n="services-desc">Infraestruturas robustas que não caem, não travam e escalam conforme a sua empresa cresce.</p>
-        </div>
-        <div class="services-grid-two">
-            <div class="service-card">
-                <div class="service-card-header">
-                    <span class="service-num">01 //</span>
-                    <h3 class="service-title" data-i18n="service1-title">Digitalização e Automação de Processos</h3>
-                </div>
-                <p class="service-desc" data-i18n="service1-desc">Mapeamos os processos da sua empresa e transformamos tarefas manuais, planilhas dispersas e controles paralelos em um sistema centralizado, seguro e totalmente personalizado.</p>
-                <ul class="service-features">
-                    <li data-i18n="service1-f1">Automação de tarefas repetitivas</li>
-                    <li data-i18n="service1-f2">Centralização de informações</li>
-                    <li data-i18n="service1-f3">Redução de erros operacionais</li>
-                    <li data-i18n="service1-f4">Controle em tempo real</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="service-card-header">
-                    <span class="service-num">02 //</span>
-                    <h3 class="service-title" data-i18n="service2-title">Evolução de Sistemas Existentes</h3>
-                </div>
-                <p class="service-desc" data-i18n="service2-desc">Corrigimos gargalos, eliminamos limitações e evoluímos sistemas já existentes para acompanhar o crescimento da sua operação.</p>
-                <ul class="service-features">
-                    <li data-i18n="service2-f1">Melhoria de desempenho</li>
-                    <li data-i18n="service2-f2">Novas funcionalidades</li>
-                    <li data-i18n="service2-f3">Integrações com outros sistemas</li>
-                    <li data-i18n="service2-f4">Escalabilidade operacional</li>
-                </ul>
-            </div>
-        </div>
-    </section>
     
-    <section class="positioning-section">
-        <div class="wide-container">
-            <div class="center-header">
-                <span class="section-tag" data-i18n="pos-tag">NOSSO FOCO</span>
-                <h2 class="section-title" data-i18n="pos-title">Não vendemos software.</h2>
-                <p class="section-desc" data-i18n="pos-desc">
-                    Vendemos controle, productivity e escalabilidade. <br> O software é apenas a ferramenta que utilizamos para transformar processos empresariais em operações mais rápidas, organizadas e lucrativas.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portifolio" class="premium-cases-section">
-        <div class="wide-container">
-            <div class="center-header">
-                <span class="section-tag" data-i18n="cases-header-tag">Processos que transformamos em sistemas próprios</span>
-                <h2 class="section-title" data-i18n="cases-header-title">Cada sistema nasce de um desafio operacional real.</h2>
-            </div>
-
-            <div class="cases-wrapper">
-                <div class="case-row">
-                    <div class="case-image-side construction-img">
-                        <img src="imagens/CONSTRUTORA.webp" alt="Case 1" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-text-side">
-                        <span class="case-project-num" data-i18n="case1-num">PROJETO 01 // OPERAÇÕES DE CAMPO</span>
-                        <h3 class="case-project-title" data-i18n="case1-title">GESTÃO DE OBRAS PRO</h3>
-                        <p class="case-project-desc" data-i18n="case1-desc">
-                            Transformamos o controle de equipes, alojamentos, materiais e produtividade em um único sistema corporativo de alta performance.
-                        </p>
-                        <div class="transformation-box">
-                            <div class="t-before">
-                                <strong data-i18n="case-before">Antes</strong>
-                                <ul>
-                                    <li data-i18n="case1-b1">Planilhas dispersas</li>
-                                    <li data-i18n="case1-b2">Grupos de WhatsApp</li>
-                                    <li data-i18n="case1-b3">Controle estritamente manual</li>
-                                    <li data-i18n="case1-b4">Falta Crítica de informação</li>
-                                </ul>
-                            </div>
-                            <div class="t-after">
-                                <strong data-i18n="case-after">Depois</strong>
-                                <ul>
-                                    <li data-i18n="case1-a1">Sistema único centralizado</li>
-                                    <li data-i18n="case1-a2">Dados de campo em tempo real</li>
-                                    <li data-i18n="case1-a3">Controle total da operação</li>
-                                    <li data-i18n="case1-a4">Indicadores executivos automáticos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="case-meta-tags">
-                            <span class="meta-tag" data-i18n="case1-meta1">Módulos: Colaboradores · Alojamentos · Estoque · Ponto · Relatórios</span>
-                            <span class="meta-tag security-tag" data-i18n="case-secure">🔒 Projeto de infraestrutura privada</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="case-row row-reverse">
-                    <div class="case-image-side missions-img">
-                        <img src="imagens/PTT.webp" alt="Case 2" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-text-side">
-                        <span class="case-project-num" data-i18n="case2-num">PROJETO 02 // WEB PLATFORM & COMUNIDADE</span>
-                        <h3 class="case-project-title" data-i18n="case2-title">PORTAL INTERNACIONAL DE MISSÕES</h3>
-                        <p class="case-project-desc" data-i18n="case2-desc">
-                            Desenvolvimento de um ecossistema global para engajamento, mapeamento de expedições e captação segura de recursos para missões humanitárias.
-                        </p>
-                        <div class="transformation-box">
-                            <div class="t-before">
-                                <strong data-i18n="case-before">Antes</strong>
-                                <ul>
-                                    <li data-i18n="case2-b1">Divulgação descentralizada</li>
-                                    <li data-i18n="case2-b2">Dificuldade em doações transfronteiriças</li>
-                                    <li data-i18n="case2-b3">Falta de relatórios de impacto em tempo real</li>
-                                </ul>
-                            </div>
-                            <div class="t-after">
-                                <strong data-i18n="case-after">Depois</strong>
-                                <ul>
-                                    <li data-i18n="case2-a1">Portal com mapa interativo global</li>
-                                    <li data-i18n="case2-a2">Gateway de pagamento multi-moedas internacional</li>
-                                    <li data-i18n="case2-a3">Painel administrativo de transparência e prestação de contas</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="case-meta-tags">
-                            <span class="meta-tag" data-i18n="case2-meta1">Tecnologias: Next.js · GeoMapping API · Stripe Gateway · Nuvem Escalável</span>
-                        </div>
-                    </div>
-                </div>
-               
-
-                <div class="case-row row-reverse">
-                    <div class="case-image-side ngo-img">
-                        <img src="imagens/eumaisum.webp" alt="Case 3" onerror="this.style.display='none'">
-                    </div>
-                    <div class="case-text-side">
-                        <span class="case-project-num" data-i18n="case3-num">PROJETO 03 // ECOSSISTEMA SOLIDÁRIO & INFRAESTRUTURA</span>
-                        <h3 class="case-project-title" data-i18n="case3-title">PORTAL INSTITUCIONAL ONG</h3>
-                        <p class="case-project-desc" data-i18n="case3-desc">
-                            Migração, redesenho e hospedagem gerenciada e resiliência contra picos repentinos de tráfego durante campanhas nacionais.
-                        </p>
-                        <div class="transformation-box">
-                            <div class="t-before">
-                                <strong data-i18n="case-before">Antes</strong>
-                                <ul>
-                                    <li data-i18n="case3-b1">Site antigo frequentemente fora do ar por sobrecarga</li>
-                                    <li data-i18n="case3-b2">Zero otimização no Google</li>
-                                    <li data-i18n="case3-b3">Painel de postagens complexo e lento</li>
-                                </ul>
-                            </div>
-                            <div class="t-after">
-                                <strong data-i18n="case-after">Depois</strong>
-                                <ul>
-                                    <li data-i18n="case3-a1">Hospedagem em cluster elástico com Cloudflare Enterprise CDN</li>
-                                    <li data-i18n="case3-a2">Core Web Vitals pontuação 100/100 no Google Lighthouse</li>
-                                    <li data-i18n="case3-a3">CMS headless sob medida para publicação instantânea</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="case-meta-tags">
-                            <span class="meta-tag" data-i18n="case3-meta1">Serviço: Hospedagem Gerenciada · Alta Disponibilidade · SEO Avançado · Headless CMS</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-      <section class="pillars-section">
-        <div class="wide-container">
-            <div class="center-header">
-                <span class="section-tag" data-i18n="pillars-header-tag">Padrão de Engenharia</span>
-                <h2 class="section-title" data-i18n="pillars-header-title">Nossos 3 Pilares Fundamentais</h2>
-            </div>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-tech-tag">PROCESS_AUTOMATION</div>
-                    <h3 class="pillar-card-title" data-i18n="pillar1-title">Automação Inteligente</h3>
-                    <p class="pillar-card-desc" data-i18n="pillar1-desc">Eliminamos tarefas repetitivas e reduzimos o esforço operacional da equipa.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-tech-tag">DATA_CENTRALIZATION</div>
-                    <h3 class="pillar-card-title" data-i18n="pillar2-title">Informação Centralizada</h3>
-                    <p class="pillar-card-desc" data-i18n="pillar2-desc">Todos os dados da empresa organizados num único local.</p>
-                </div>
-                <div class="pillar-card">
-                   <div class="pillar-tech-tag">BUSINESS_SCALABILITY</div>
-                    <h3 class="pillar-card-title" data-i18n="pillar3-title">Preparado para Crescer</h3>
-                    <p class="pillar-card-desc" data-i18n="pillar3-desc">Sistemas preparados para acompanhar a evolução da empresa sem criar novos gargalos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="demo" class="demo-section">
-        <div class="demo-container">
-            <h2 class="section-title" data-i18n="demo-title">Receba um Diagnóstico Operacional Gratuito</h2>
-            <p class="section-desc" data-i18n="demo-desc">Analisamos os processos da sua empresa e identificamos oportunidades de automação, redução de custos e ganho de produtividade.</p>
-            <div class="demo-grid">
-                <div class="demo-box">
-                    <h4 data-i18n="demo-b1-title">1. O que nós analisamos?</h4>
-                    <p data-i18n="demo-b1-desc">Fluxos internos, tarefas manuais, controles paralelos, gargalos operacionais e desperdício de tempo.</p>
-                </div>
-                <div class="demo-box">
-                    <h4 data-i18n="demo-b2-title">2. O que você recebe?</h4>
-                    <p data-i18n="demo-b2-desc">Um plano prático mostrando quais processos podem ser transformados em um sistema próprio e qual o impacto esperado.</p>
-                </div>
-            </div>
-            <div class="demo-action-btn">
-                <a href="#contato" class="btn-primary" data-i18n="demo-btn">Solicitar Auditoria Gratuita</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="aplicacoes" class="segments-section">
-        <div class="wide-container">
-            <div class="center-header">
-                <span class="section-tag" data-i18n="apps-tag">Aplicações Reais</span>
-                <h2 class="section-title" data-i18n="apps-title">Processos que já transformamos em sistemas próprios</h2>
-            </div>
-            <div class="segments-grid">
-                <div class="segment-item">
-                    <h3 class="segment-item-title" data-i18n="apps-s1-title">Logística e Operações de Campo</h3>
-                    <p class="segment-item-desc" data-i18n="apps-s1-desc">Rastreamento de frotas, controle rígido de estoques inteligentes e painéis para monitoramento em tempo real de equipes de rua.</p>
-                </div>
-                <div class="segment-item">
-                    <h3 class="segment-item-title" data-i18n="apps-s2-title">Fintechs e Plataformas Financeiras</h3>
-                    <p class="segment-item-desc" data-i18n="apps-s2-desc">Integrações complexas de meios de pagamento, conciliação bancária automatizada e dashboards de auditoria transacional.</p>
-                </div>
-                <div class="segment-item">
-                    <h3 class="segment-item-title" data-i18n="apps-s3-title">SaaS e Softwares Corporativos</h3>
-                    <p class="segment-item-desc" data-i18n="apps-s3-desc">Transformação de ideias de negócios em produtos digitais escaláveis e prontos para serem comercializados no mercado corporativo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projetos">
-        <div class="growth-inner">
-            <div class="center-header growth-header">
-                <span class="section-tag" data-i18n="growth-tag">Metodologia Ágil</span>
-                <h2 class="section-title" data-i18n="growth-title">Como transformamos operações em sistemas</h2>
-            </div>
-            <div class="growth-grid">
-                <div class="growth-card">
-                    <span class="growth-card-num">01</span>
-                    <span class="growth-card-tag" data-i18n="growth-c1-tag">// IMERSÃO TÉCNICA</span>
-                    <h3 class="growth-card-title" data-i18n="growth-c1-title">Mapeamento de Regras</h3>
-                    <p class="growth-card-desc" data-i18n="growth-c1-desc">Nenhum código é escrito antes de entendermos de ponta a ponta a rotina e os desafios reais da sua operação de negócios.</p>
-                </div>
-                <div class="growth-card">
-                    <span class="growth-card-num">02</span>
-                    <span class="growth-card-tag" data-i18n="growth-c2-tag">// DEPLOYS CONSTANTES</span>
-                    <h3 class="growth-card-title" data-i18n="growth-c2-title">Entregas Semanais</h3>
-                    <p class="growth-card-desc" data-i18n="growth-c2-desc">Você não fica meses esperando para ver o sistema. Semanalmente liberamos uma versão funcional em ambiente de testes para acompanhamento.</p>
-                </div>
-                <div class="growth-card">
-                    <span class="growth-card-num">03</span>
-                    <span class="growth-card-tag" data-i18n="growth-c3-tag">// SUPORTE DE ENGENHARIA</span>
-                    <h3 class="growth-card-title" data-i18n="growth-c3-title">Acompanhamento Ativo</h3>
-                    <p class="growth-card-desc" data-i18n="growth-c3-desc">Após o lançamento, nossa equipe monitora os servidores de perto para garantir que o sistema se comporte perfeitamente sob estresse de acessos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <div class="faq-container">
-            <div class="center-header">
-                <span class="section-tag" data-i18n="faq-tag">Esclarecimentos</span>
-                <h2 class="section-title" data-i18n="faq-title">Perguntas Frequentes</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-card">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-text" data-i18n="faq1-q">Vocês dão manutenção em sistemas que não foram feitos por vocês?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer-wrap">
-                        <p class="faq-answer" data-i18n="faq1-a">Sim. Fazemos um diagnóstico técnico inicial para entender o estado do código atual, mapear problemas latentes e propor um plano estruturado de estabilização e melhorias contínuas.</p>
-                    </div>
-                </div>
-                <div class="faq-card">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-text" data-i18n="faq2-q">O código-fonte do sistema desenvolvido passa a ser da minha empresa?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer-wrap">
-                        <p class="faq-answer" data-i18n="faq2-a">Com certeza. Contratualmente, após a quitação das etapas do projeto, a propriedade intelectual e todo o código-fonte desenvolvido passam a ser 100% da sua empresa, sem amarras operacionais.</p>
-                    </div>
-                </div>
-                <div class="faq-card">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-text" data-i18n="faq3-q">Como funciona a hospedagem e a infraestrutura dos servidores?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer-wrap">
-                        <p class="faq-answer" data-i18n="faq3-a">Nós estruturamos toda a arquitetura de servidores em nuvem em contas de propriedade da sua própria empresa. Deixamos tudo automatizado e configurado, gerando economia e autonomia total.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="cta-inner">
-            <h2 class="cta-title" data-i18n="cta-title">Pare de adiar a estabilidade da sua <span>infraestrutura digital</span>.</h2>
-            <p class="cta-desc" data-i18n="cta-desc">Clique no botão abaixo para agendar uma conversa direta com um engenheiro de software. Sem intermediários comerciais, vamos direto ao ponto técnico do seu desafio.</p>
-            <div class="cta-actions">
-                <a href="https://wa.me/+351961177188" class="btn-primary" target="_blank" data-i18n="cta-btn">Iniciar Conversa no WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="terms-disclaimer-section">
-        <p class="disclaimer-text" data-i18n="disclaimer">AVISO: A TZORI É UMA AGÊNCIA DE ENGENHARIA DE SOFTWARE INDEPENDENTE E ATUA SOB CONTRATOS E DIRETRIZES DE ACORDO DE NÍVEL DE SERVIÇO (SLA) E ACORDOS DE CONFIDENCIALIDADE (NDA) RÍGIDOS DE MERCADO COM SEUS PARCEIROS.</p>
+    <div class="engineering-transition-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+        <span class="banner-kicker">// ENGENHARIA REAL</span>
+        <h2 class="banner-title">
+            "Código que funciona <br>
+            <span class="accent-orange-text">e continua funcionando.</span>"
+        </h2>
     </div>
+</div>
 
-    <footer>
-        <a href="#" class="footer-logo">
-            <img src="imagens/logo.webp" alt="TZORI" onerror="this.style.display='none'"> TZORI
-        </a>
-        <ul class="footer-links">
-            <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
-            <li><a href="#demo" data-i18n="footer-link-demo">Análise</a></li>
-            <li><a href="#aplicacoes" data-i18n="nav-apps">Aplicações</a></li>
-            <li><a href="#projetos" data-i18n="nav-pipeline">Esteira</a></li>
-            <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
-            <li><a href="#contato" data-i18n="footer-link-contact">Contato</a></li>
-        </ul>
-        
-        <div class="footer-projects">
-            <span class="projects-title" data-i18n="footer-proj-title">// PROJETOS ATIVOS:</span>
-            <a href="https://site.costruccionesjc.com/" target="_blank"> JC CONSTRUCCIONES</a><span class="projects-sep">·</span>
-            <a href="https://portodaterra.com.br/" target="_blank">Por Toda Terra</a><span class="projects-sep">·</span>
-            <a href="https://wheat-tarsier-468671.hostingersite.com/" target="_blank">Vai dar Namoro</a><span class="projects-sep">·</span>
-            <a href="https://eumaisum.com/" target="_blank">Eu Mais Um</a>
+
+<!-- PILARES -->
+<section class="pillars-section">
+        <div class="container">
+            
+            <div class="section-header">
+                <div class="header-left">
+                    <span class="subtitle">// 02 - TECNOLOGIA</span>
+                    <h2>Toda operação. <br> Um único sistema.</h2>
+                </div>
+                <div class="header-right">
+                    <p>Uma única obsessão: sistemas que funcionam de verdade.</p>
+                </div>
+            </div>
+
+            <div class="pillars-content">
+                
+                <div class="pillars-list">
+                    
+                    <div class="pillar-item">
+                        <div class="pillar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    </svg>
+</div>
+                        <div class="pillar-text">
+                            <h3>Automação Inteligente</h3>
+                            <p>Eliminamos tarefas repetitivas com lógica de negócio real — não templates genéricos.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <div class="pillar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+        <path d="M3 12A9 3 0 0 0 21 12"></path>
+    </svg>
+</div>
+                        <div class="pillar-text">
+                            <h3>Informação Centralizada</h3>
+                            <p>Uma fonte de verdade. Todos os dados da operação acessíveis em um único sistema.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <div class="pillar-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+    </svg>
+</div>
+                        <div class="pillar-text">
+                            <h3>Preparado para Crescer</h3>
+                            <p>Arquitetura que escala com o negócio. Sem refatorar do zero quando o volume aumenta.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pillars-image-container">
+                    <img src="imagens/infra.png" alt="Infraestrutura de Servidores" class="pillars-image">
+                    <span class="image-caption">// INFRA SOB SEU CONTROLE</span>
+                </div>
+
+            </div>
+
         </div>
-        
-        <span class="footer-copy" data-i18n="footer-copy">© 2026 TZORI — Transformação Digital e Sistemas Empresariais. <br> Todos os direitos reservados.</span>
+    </section>
+
+
+ <!--PROJETOS-->
+    <section id="projetos" class="section-row">
+    <div class="section-left-col">
+        <span class="section-num">// 03 — PROJETOS</span>
+        <h2 class="section-heading-serif">Casos reais.</h2>
+    </div>
+    <div class="section-right-col">
+        <div class="cases-table">
+            
+            <div class="case-row">
+                <div class="case-meta-cell">
+                    <span class="case-num-small">01</span>
+                    <div>
+                        <span class="case-tag">CONSTRUÇÃO CIVIL · 2025</span>
+                        <h3 class="case-row-title">Gestão de Obras Pro</h3>
+                    </div>
+                </div>
+                <div class="case-desc-cell">
+                    <p>Cronogramas, equipes e relatórios de campo integrados em tempo real.</p>
+                </div>
+                
+                <div class="case-img-cell">
+                    <img src="imagens/contrustora 1.png" alt="Gestão de Obras Pro" class="case-project-img">
+                </div>
+                
+                <div class="case-score-cell">
+                    <span class="score-num">98</span>
+                    <span class="score-lbl">Lighthouse<br>/100</span>
+                </div>
+            </div>
+
+            <div class="case-row">
+                <div class="case-meta-cell">
+                    <span class="case-num-small">02</span>
+                    <div>
+                        <span class="case-tag">ONG GLOBAL · 2025</span>
+                        <h3 class="case-row-title">Portal Internacional de Missões</h3>
+                    </div>
+                </div>
+                <div class="case-desc-cell">
+                    <p>Site para grupo de missões com conteúdo multilíngue para alcance global.</p>
+                </div>
+                
+                <div class="case-img-cell">
+                    <img src="imagens/PTT.webp" alt="Portal Internacional de Missões" class="case-project-img">
+                </div>
+                
+                <div class="case-score-cell">
+                    <span class="score-num">96</span>
+                    <span class="score-lbl">Lighthouse<br>/100</span>
+                </div>
+            </div>
+
+            <div class="case-row">
+                <div class="case-meta-cell">
+                    <span class="case-num-small">03</span>
+                    <div>
+                        <span class="case-tag">TERCEIRO SETOR · 2024</span>
+                        <h3 class="case-row-title">Portal Institucional ONG</h3>
+                    </div>
+                </div>
+                <div class="case-desc-cell">
+                    <p>Headless CMS + Cloudflare CDN. Edição simples, performance máxima.</p>
+                </div>
+                
+                <div class="case-img-cell">
+                    <img src="imagens/eumaisum.webp" alt="Portal Institucional ONG" class="case-project-img">
+                </div>
+                
+                <div class="case-score-cell">
+                    <span class="score-num">100</span>
+                    <span class="score-lbl">Lighthouse<br>/100</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="metodologia" class="section-row orange-theme">
+        <div class="section-left-col">
+            <span class="section-num">// 04 — METODOLOGIA</span>
+            <h2 class="section-heading-serif">Como trabalhamos.</h2>
+        </div>
+        <div class="section-right-col">
+            <div class="metodologia-split">
+                <div class="metodologia-steps">
+                    <div class="step-card">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4 class="step-title">Mapeamento de Regras</h4>
+                            <p class="step-desc">Imersão técnica nas regras de negócio antes de escrever a primeira linha de código.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4 class="step-title">Entregas Semanais</h4>
+                            <p class="step-desc">Deploys incrementais toda semana. Progresso real — não promessas de funcionalidade.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4 class="step-title">Acompanhamento Ativo</h4>
+                            <p class="step-desc">Monitoramento pós-lançamento com SLA definido. Não entregamos e sumimos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="metodologia-visual">
+                    <div class="metodologia-image-placeholder">
+                        <span class="img-caption">TRABALHO EM EQUIPE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-row">
+        <div class="section-left-col">
+            <span class="section-num">// 05 — FAQ</span>
+            <h2 class="section-heading-serif">Perguntas.</h2>
+        </div>
+        <div class="section-right-col">
+            <div class="accordion-group">
+                <details class="accordion-item" open>
+                    <summary class="accordion-header">
+                        Vocês mantêm sistemas que não foram desenvolvidos por vocês?
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p>Sim. Avaliamos a integridade do código legado atual da sua empresa, propomos melhorias estruturais de performance e segurança e assumimos a manutenção contínua.</p>
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        Quem fica com o código-fonte ao final?
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p>O código-fonte é 100% seu. Registramos toda a propriedade intelectual no seu nome ou no da sua empresa, garantindo total liberdade técnica.</p>
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        A hospedagem fica em contas da TZORI?
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p>Não. Configuramos todo o ambiente de produção (AWS, Google Cloud, Vercel ou DigitalOcean) diretamente sob as suas credenciais financeiras e administrativas.</p>
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        Qual o prazo mínimo de um projeto?
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p>Nossos projetos de automação operacional levam em média de 4 a 8 semanas para a primeira versão estável entrar em produção.</p>
+                    </div>
+                </details>
+                <details class="accordion-item">
+                    <summary class="accordion-header">
+                        Atendem empresas fora de Portugal?
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="accordion-content">
+                        <p>Sim. Atendemos clientes em regime remoto na Europa, Brasil e Estados Unidos, com contratos internacionais padronizados.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-hero-dark">
+        <div class="contact-container">
+            <span class="contact-num">// CONTATO</span>
+            <h2 class="contact-main-title">
+                Pronto para <br>
+                <span class="italic-orange">eliminar</span> <br>
+                o retrabalho?
+            </h2>
+            <p class="contact-sub">Diagnóstico gratuito. Sem compromisso. Mapeamos sua operação e mostramos o que é possível.</p>
+            
+            <div class="contact-actions">
+                <a href="https://wa.me/351900000000" class="btn-whatsapp-orange">
+                    💬 Iniciar Conversa no WhatsApp
+                </a>
+                <span class="contact-badge">✓ SLA + NDA em todos os projetos</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-layout">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="footer-logo">Tzori<span>.</span></span>
+                <span class="footer-sub">Software Engineering · Security · SEO</span>
+            </div>
+            <div class="footer-middle">
+                <span class="footer-client">JC Construcciones</span>
+                <span class="footer-client">Por Toda Terra</span>
+                <span class="footer-client">Vai dar Namoro</span>
+                <span class="footer-client">Eu Mais Um</span>
+            </div>
+            <div class="footer-right">
+                <span>© 2026 TZORI — Todos os direitos reservados</span>
+            </div>
+        </div>
     </footer>
 
-    <a href="https://wa.me/+351961177188" class="wa-float" target="_blank" aria-label="Contato via WhatsApp">
-        <svg viewBox="0 0 32 32">
-            <path d="M16 2a13.93 13.93 0 0 0-13.93 13.93c0 2.42.62 4.77 1.82 6.85L2 29.8l7.25-1.9a13.84 13.84 0 0 0 6.75 1.77A13.93 13.93 0 0 0 16 2zm0 25.56c-2.13 0-4.21-.57-6.04-1.65l-.43-.25-4.48 1.17 1.2-4.37-.28-.44a11.53 11.53 0 0 1-1.78-6.1A11.58 11.58 0 0 1 16 4.33a11.58 11.58 0 0 1 11.57 11.57A11.59 11.59 0 0 1 16 27.56zm6.36-8.7c-.35-.18-2.07-1-2.39-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.11-1.08 1.34-.2.23-.4.25-.75.08a9.45 9.45 0 0 1-2.79-1.72 10.4 10.4 0 0 1-1.92-2.4c-.2-.35-.02-.54.15-.71.16-.16.35-.4.53-.6.17-.2.23-.34.34-.57.12-.23.06-.43-.03-.6-.09-.17-.77-1.85-1.05-2.54-.28-.68-.56-.59-.77-.6l-.66-.01c-.23 0-.6.09-.92.43a3.54 3.54 0 0 0-1.11 2.63c0 1.65 1.2 3.24 1.37 3.47.17.22 2.36 3.6 5.72 5.05.8.34 1.42.55 1.9.71.8.25 1.53.22 2.11.13.65-.1 2.07-.85 2.36-1.67.29-.82.29-1.53.2-1.67-.08-.14-.3-.23-.65-.41z"/>
-        </svg>
-    </a>
-
-    <script src="script.js"></script>
 </body>
 </html>
