@@ -1,146 +1,253 @@
-       const translations = {
-            pt: {
-                "nav-services": "Serviços", "nav-projects": "Projetos", "nav-method": "Metodologia", "nav-contact": "Contato",
-                "btn-free-diag": "Diagnóstico Gratuito", "sub-locations": "PORTUGAL · ESPANHA · BRASIL",
-                "hero-title": "Processos <br> <span class='italic-orange'>viram</span> <br> sistemas.",
-                "hero-desc": "Eliminamos planilhas, tarefas manuais e operações desorganizadas. Sistemas centralizados feitos sob medida para o seu negócio.",
-                "btn-request-diag": "Solicitar Diagnóstico →", "btn-view-services": "Ver Serviços",
-                "metric-rework": "RETRABALHO", "metric-prod": "PRODUTIVIDADE", "metric-integrated": "INTEGRADO",
-                "kicker-active": "// PROJETOS ATIVOS", "cat-civil": "Construção Civil", "cat-missions": "Missões", "cat-ong": "ONG Global",
-                "manifesto-title": "Não vendemos software.", "manifesto-desc": "Vendemos controle, produtividade e escalabilidade.",
-                "sec-services-num": "// 01 — SERVIÇOS", "sec-services-title": "O que<br>fazemos.",
-                "s1-title": "Digitalização & Automação", "s1-desc": "Mapeamos e centralizamos operações que vivem em planilhas e processos manuais. O resultado é um sistema próprio que elimina retrabalho e gera visibilidade total.",
-                "tag-processes": "Processos", "tag-automation": "Automação", "tag-integration": "Integração",
-                "s2-title": "Evolução de Sistemas", "s2-desc": "Corrigimos performance, adicionamos funcionalidades e integramos APIs em sistemas legados. Sem reescrever do zero, sem perder o que já funciona.",
-                "tag-integrations": "Integrações", "s3-title": "Engenharia de Deploy", "s3-desc": "Infraestrutura estruturada sob contas do próprio cliente. CI/CD, containers, monitoramento e SLA definido. Controle total, zero lock-in.",
-                "banner-kicker": "// ENGENHARIA REAL", "banner-title": "\"Código que funciona <br> <span class='accent-orange-text'>e continua funcionando.</span>\"",
-                "sec-tech-num": "// 02 - TECNOLOGIA", "sec-tech-title": "Toda operação. <br> Um único sistema.", "sec-tech-desc": "Uma única obsessão: sistemas que funcionam de verdade.",
-                "p1-title": "Automação Inteligente", "p1-desc": "Eliminamos tarefas repetitivas com lógica de negócio real, não templates genéricos.",
-                "p2-title": "Informação Centralizada", "p2-desc": "Uma fonte de verdade. Todos os dados da operação acessíveis em um único sistema.",
-                "p3-title": "Preparado para Crescer", "p3-desc": "Arquitetura que escala com o negócio. Sem refatorar do zero quando o volume aumenta.",
-                "image-caption": "// INFRA SOB SEU CONTROLE", "sec-projects-num": "// 03 — PROJETOS", "sec-projects-title": "Casos reais.",
-                "proj1-tag": "CONSTRUÇÃO CIVIL", "proj1-desc": "Cronogramas, ponto, equipamento, equipes e relatórios de campo integrados em tempo real.",
-                "proj2-tag": "SITE DE MISSÕES", "proj2-desc": "Site para grupo de missões com conteúdo multilíngue para alcance global.",
-                "proj3-tag": "TERCEIRO SETOR", "proj3-desc": "Site internacional para ONG. Código parado que transformamos em algo real.",
-                "sec-method-num": "// 04 — METODOLOGIA", "sec-method-title": "Como trabalhamos.",
-                "m1-title": "Mapeamento de Regras", "m1-desc": "Imersão técnica nas regras de negócio antes de escrever a primeira linha de código.",
-                "m2-title": "Entregas Semanais", "m2-desc": "Deploys incrementais toda semana. Progresso real — não promessas de funcionalidade.",
-                "m3-title": "Acompanhamento Ativo", "m3-desc": "Monitoramento pós-lançamento com SLA definido. Não entregamos e sumimos.",
-                "method-caption": "TRABALHO EM EQUIPE", "sec-faq-title": "Perguntas.",
-                "q1-title": "Vocês mantêm sistemas que não foram desenvolvidos por vocês?", "q1-desc": "Sim. Avaliamos a integridade do código legado atual da sua empresa, propomos melhorias estruturais de performance e segurança e assumimos a manutenção contínua.",
-                "q2-title": "Quem fica com o código-fonte ao final?", "q2-desc": "O código-fonte é 100% seu. Registramos toda a propriedade intelectual no seu nome ou no da sua empresa, garantindo total liberdade técnica.",
-                "q3-title": "A hospedagem fica em contas da TZORI?", "q3-desc": "Não. Configuramos todo o ambiente de produção (AWS, Google Cloud, Vercel ou DigitalOcean) diretamente sob as suas credenciais financeiras e administrativas.",
-                "q4-title": "Qual o prazo mínimo de um projeto?", "q4-desc": "Nossos projetos de automação operacional levam em média de 4 a 8 semanas para a primeira versão estável entrar em produção.",
-                "q5-title": "Atendem empresas de quais países?", "q5-desc": "Atendemos clientes em regime remoto na Europa, Brasil e Estados Unidos, com contratos internacionais padronizados.",
-                "sec-contact-num": "// CONTATO", "contact-title": "Pronto para <br> <span class='italic-orange'>eliminar</span> <br> o retrabalho?",
-                "contact-desc": "Diagnóstico gratuito. Sem compromisso. Mapeamos sua operação e mostramos o que é possível.",
-                "btn-whatsapp": "Iniciar Conversa no WhatsApp", "contact-badge": "✓ SLA + NDA em todos os projetos",
-                "footer-rights": "© 2026 TZORI — Todos os direitos reservados"
-            },
-            en: {
-                "nav-services": "Services", "nav-projects": "Projects", "nav-method": "Methodology", "nav-contact": "Contact",
-                "btn-free-diag": "Free Diagnosis", "sub-locations": "PORTUGAL · SPAIN · BRAZIL",
-                "hero-title": "Processes <br> <span class='italic-orange'>become</span> <br> systems.",
-                "hero-desc": "We eliminate spreadsheets, manual tasks, and disorganized operations. Centralized systems custom-built for your business.",
-                "btn-request-diag": "Request Diagnosis →", "btn-view-services": "View Services",
-                "metric-rework": "REWORK REDUCTION", "metric-prod": "PRODUCTIVITY", "metric-integrated": "INTEGRATED",
-                "kicker-active": "// ACTIVE PROJECTS", "cat-civil": "Civil Construction", "cat-missions": "Missions", "cat-ong": "Global NGO",
-                "manifesto-title": "We don't sell software.", "manifesto-desc": "We sell control, productivity, and scalability.",
-                "sec-services-num": "// 01 — SERVICES", "sec-services-title": "What<br>we do.",
-                "s1-title": "Digitalization & Automation", "s1-desc": "We map and centralize operations trapped in spreadsheets and manual processes. The result is a proprietary system that eliminates rework and provides total visibility.",
-                "tag-processes": "Processes", "tag-automation": "Automation", "tag-integration": "Integration",
-                "s2-title": "Systems Evolution", "s2-desc": "We fix performance, add features, and integrate APIs into legacy systems. Without rewriting from scratch, without losing what already works.",
-                "tag-integrations": "Integrations", "s3-title": "Deploy Engineering", "s3-desc": "Infrastructure structured under the client's own accounts. CI/CD, containers, monitoring, and defined SLA. Total control, zero lock-in.",
-                "banner-kicker": "// REAL ENGINEERING", "banner-title": "\"Code that works <br> <span class='accent-orange-text'>and keeps working.</span>\"",
-                "sec-tech-num": "// 02 - TECHNOLOGY", "sec-tech-title": "All operations. <br> A single system.", "sec-tech-desc": "One single obsession: systems that actually work.",
-                "p1-title": "Intelligent Automation", "p1-desc": "We eliminate repetitive tasks with real business logic, not generic templates.",
-                "p2-title": "Centralized Information", "p2-desc": "One single source of truth. All operational data accessible in one place.",
-                "p3-title": "Ready to Grow", "p3-desc": "Architecture that scales with the business. No refactoring from scratch as volume grows.",
-                "image-caption": "// INFRA UNDER YOUR CONTROL", "sec-projects-num": "// 03 — PROJECTS", "sec-projects-title": "Real cases.",
-                "proj1-tag": "CIVIL CONSTRUCTION", "proj1-desc": "Schedules, clock-in, equipment, teams, and field reports integrated in real time.",
-                "proj2-tag": "MISSIONS SITE", "proj2-desc": "Missions website with multilingual content for global reach.",
-                "proj3-tag": "THIRD SECTOR", "proj3-desc": "International website for NGO. We turned abandoned code into a real working product.",
-                "sec-method-num": "// 04 — METHODOLOGY", "sec-method-title": "How we work.",
-                "m1-title": "Rules Mapping", "m1-desc": "Technical immersion into business rules before writing the first line of code.",
-                "m2-title": "Weekly Deliveries", "m2-desc": "Incremental deploys every week. Real progress — not just feature promises.",
-                "m3-title": "Active Support", "m3-desc": "Post-launch monitoring with defined SLA. We don't deliver and disappear.",
-                "method-caption": "TEAMWORK", "sec-faq-title": "Questions.",
-                "q1-title": "Do you maintain systems that were not developed by you?", "q1-desc": "Yes. We evaluate the integrity of your company's current legacy code, propose structural performance and security improvements, and take over ongoing maintenance.",
-                "q2-title": "Who owns the source code at the end?", "q2-desc": "The source code is 100% yours. We register all intellectual property under your name or your company's name, ensuring full technical freedom.",
-                "q3-title": "Is hosting managed under TZORI's accounts?", "q3-desc": "No. We configure the production environment (AWS, Google Cloud, Vercel, or DigitalOcean) directly under your financial and administrative credentials.",
-                "q4-title": "What is the minimum project timeline?", "q4-desc": "Our operational automation projects take an average of 4 to 8 weeks for the first stable version to go live.",
-                "q5-title": "Which countries do you serve?", "q5-desc": "We serve clients remotely in Europe, Brazil, and the United States, utilizing standardized international contracts.",
-                "sec-contact-num": "// CONTACT", "contact-title": "Ready to <br> <span class='italic-orange'>eliminate</span> <br> rework?",
-                "contact-desc": "Free diagnosis. No obligation. We map your operation and show you what is possible.",
-                "btn-whatsapp": "Start Conversation on WhatsApp", "contact-badge": "✓ SLA + NDA on all projects",
-                "footer-rights": "© 2026 TZORI — All rights reserved"
-            },
-            es: {
-                "nav-services": "Servicios", "nav-projects": "Proyectos", "nav-method": "Metodología", "nav-contact": "Contacto",
-                "btn-free-diag": "Diagnóstico Gratuito", "sub-locations": "PORTUGAL · ESPAÑA · BRASIL",
-                "hero-title": "Los procesos <br> <span class='italic-orange'>se vuelven</span> <br> sistemas.",
-                "hero-desc": "Eliminamos hojas de cálculo, tareas manuales y operaciones desorganizadas. Sistemas centralizados hechos a la medida de tu negocio.",
-                "btn-request-diag": "Solicitar Diagnóstico →", "btn-view-services": "Ver Servicios",
-                "metric-rework": "RETRABAJO", "metric-prod": "PRODUCTIVIDAD", "metric-integrated": "INTEGRADO",
-                "kicker-active": "// PROYECTOS ACTIVOS", "cat-civil": "Construcción Civil", "cat-missions": "Misiones", "cat-ong": "ONG Global",
-                "manifesto-title": "No vendemos software.", "manifesto-desc": "Vendemos control, productividad y escalabilidad.",
-                "sec-services-num": "// 01 — SERVICIOS", "sec-services-title": "Qué<br>hacemos.",
-                "s1-title": "Digitalización y Automatización", "s1-desc": "Mapeamos y centralizamos operaciones que viven en hojas de cálculo y procesos manuales. El resultado es un sistema propio que elimina el retrabajo y genera visibilidad total.",
-                "tag-processes": "Procesos", "tag-automation": "Automatización", "tag-integration": "Integración",
-                "s2-title": "Evolución de Sistemas", "s2-desc": "Corregimos rendimiento, añadimos funcionalidades e integramos APIs en sistemas heredados. Sin rediseñar desde cero, sin perder lo que ya funciona.",
-                "tag-integrations": "Integraciones", "s3-title": "Ingeniería de Despliegue", "s3-desc": "Infraestructura estructurada bajo las cuentas del propio cliente. CI/CD, contenedores, monitoreo y SLA definido. Control total, cero lock-in.",
-                "banner-kicker": "// INGENIERÍA REAL", "banner-title": "\"Código que funciona <br> <span class='accent-orange-text'>y sigue funcionando.</span>\"",
-                "sec-tech-num": "// 02 - TECNOLOGÍA", "sec-tech-title": "Toda la operación. <br> Un único sistema.", "sec-tech-desc": "Una única obsesión: sistemas que funcionan de verdad.",
-                "p1-title": "Automatización Inteligente", "p1-desc": "Eliminamos tareas repetitivas con lógica de negocio real, no plantillas genéricas.",
-                "p2-title": "Información Centralizada", "p2-desc": "Una fuente de verdad. Todos los datos de la operación accesibles en un único sistema.",
-                "p3-title": "Preparado para Crecer", "p3-desc": "Arquitectura que escala con el negocio. Sin refactorizar desde cero cuando el volumen aumenta.",
-                "image-caption": "// INFRA BAJO TU CONTROL", "sec-projects-num": "// 03 — PROYECTOS", "sec-projects-title": "Casos reales.",
-                "proj1-tag": "CONSTRUCCIÓN CIVIL", "proj1-desc": "Cronogramas, control de asistencia, equipos, brigadas y reportes de campo integrados en tiempo real.",
-                "proj2-tag": "SITIO DE MISIONES", "proj2-desc": "Sitio web para grupo de misiones con contenido multilingüe para alcance global.",
-                "proj3-tag": "TERCER SECTOR", "proj3-desc": "Sitio internacional para ONG. Código obsoleto que transformamos en un producto real.",
-                "sec-method-num": "// 04 — METODOLOGÍA", "sec-method-title": "Cómo trabajamos.",
-                "m1-title": "Mapeo de Reglas", "m1-desc": "Inmersión técnica en las reglas de negocio antes de escribir la primera línea de código.",
-                "m2-title": "Entregas Semanales", "m2-desc": "Despliegues incrementales cada semana. Progreso real, no promesas de funcionalidad.",
-                "m3-title": "Seguimiento Activo", "m3-desc": "Monitoreo post-lanzamiento con SLA definido. No entregamos y desaparecemos.",
-                "method-caption": "TRABAJO EN EQUIPO", "sec-faq-title": "Preguntas.",
-                "q1-title": "¿Mantienen sistemas que no fueron desarrollados por ustedes?", "q1-desc": "Sí. Evaluamos la integridad del código heredado actual de su empresa, proponemos mejoras estructurales de rendimiento y seguridad, y asumimos el mantenimiento continuo.",
-                "q2-title": "¿Quién se queda con el código fuente al final?", "q2-desc": "El código fuente es 100% suyo. Registramos toda la propiedad intelectual a su nombre o al de su empresa, garantizando total libertad técnica.",
-                "q3-title": "¿El alojamiento se realiza en cuentas de TZORI?", "q3-desc": "No. Configuramos todo el entorno de producción (AWS, Google Cloud, Vercel o DigitalOcean) directamente bajo sus credenciales financieras y administrativas.",
-                "q4-title": "¿Cuál es el plazo mínimo de un proyecto?", "q4-desc": "Nuestros proyectos de automatización operativa tardan una media de 4 a 8 semanas para que la primera versión estable entre en producción.",
-                "q5-title": "¿A qué países prestan servicio?", "q5-desc": "Atendemos a clientes de forma remota en Europa, Brasil y Estados Unidos, con contratos internacionales estandarizados.",
-                "sec-contact-num": "// CONTACTO", "contact-title": "¿Listo para <br> <span class='italic-orange'>eliminar</span> <br> el retrabajo?",
-                "contact-desc": "Diagnóstico gratuito. Sin compromiso. Mapeamos su operación y mostramos lo que es posible.",
-                "btn-whatsapp": "Iniciar Conversación en WhatsApp", "contact-badge": "✓ SLA + NDA en todos los proyectos",
-                "footer-rights": "© 2026 TZORI — Todos los derechos reservados"
-            }
-        };
+const translations = {
+  pt: {
+    "nav-products": "Produtos", "nav-projects": "Projetos", "nav-method": "Metodologia", "nav-faq": "FAQ", "nav-contact": "Contato",
+    "btn-free-diag": "Diagnóstico grátis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brasil",
+    "hero-title": "Três formas de tirar a sua operação <em>do improviso.</em>",
+    "hero-desc": "Criamos sistemas que centralizam sua operação, automatizamos tarefas repetitivas com IA e aceleramos seu crescimento com tráfego e recrutamento.",
+    "btn-request-diag": "Solicitar diagnóstico", "btn-view-products": "Ver produtos",
+    "metric-workers": "trabalhadores (JC)", "metric-works": "obras geridas", "metric-integrated": "integrado",
+    "tag-products": "produtos", "services-title": "Sua operação inteira,<br>automatizada e escalável.", "services-subtitle": "Esqueça o atrito operacional. Entregamos tecnologia que resolve problemas reais de ponta a ponta.",
+    "s1-name": "Sistemas", "s1-desc": "Criamos e mantemos sistemas que substituem planilhas. O Gestão de Obras Pro junta ponto facial/QR, obras, equipes, alojamentos, veículos e recibos.",
+    "s2-name": "Automação & IA", "s2-desc": "O trabalho repetitivo feito sozinho. Ligamos WhatsApp e planilhas com agentes de IA que conferem dados, avisam discrepâncias e geram relatórios automáticos.",
+    "s3-name": "Crescimento", "s3-desc": "Clientes e equipe chegando pelo WhatsApp. Campanhas no Meta Ads, criativos produzidos com IA (vídeo, áudio e imagem) e recrutamento digital completo.",
+    "demo-badge": "Diagnóstico 100% gratuito", "demo-tag": "consultoria", "demo-title": "Mostramos em 30 minutos onde a sua operação perde tempo.", "demo-desc": "Avaliamos seus processos manuais, planilhas e gargalos para mostrar exatamente o que dá para automatizar.", "btn-free-analysis": "Solicitar diagnóstico grátis",
+    "proj-tag": "casos reais", "proj-title": "Projetos que saíram do papel.",
+    "p1-sector": "construção civil", "p1-name": "Gestão de Obras Pro", "p1-desc": "Cronogramas, ponto facial/QR, equipamentos, equipes e relatórios de campo integrados em tempo real.",
+    "label-before": "antes", "label-after": "depois", "b1": "Planilhas dispersas", "b2": "Relatórios manuais", "b3": "Sem visibilidade", "a1": "Sistema centralizado", "a2": "Relatórios automáticos", "a3": "Controle em tempo real",
+    "p2-sector": "missões", "p2-name": "Por Toda Terra", "p2-desc": "Site internacional para grupo de missões com conteúdo multilíngue e alcance global.", "btn-view-project": "Ver projeto →",
+    "p3-sector": "terceiro setor", "p3-name": "Portal Institucional ONG", "p3-desc": "Site internacional para ONG. Código parado que transformamos em algo real e funcional.",
+    "method-tag": "como trabalhamos", "method-title": "Código que funciona e continua funcionando.", "method-desc": "Cada projeto começa com imersão técnica nas regras de negócio. Entregamos semanalmente e monitoramos após o lançamento.",
+    "m1-title": "Mapeamento de regras", "m1-desc": "Imersão técnica nas regras de negócio antes de escrever a primeira linha de código.",
+    "m2-title": "Entregas semanais", "m2-desc": "Deploys incrementais toda semana. Progresso real, não promessas de funcionalidade.",
+    "m3-title": "Acompanhamento ativo", "m3-desc": "Monitoramento pós-lançamento com SLA definido. Não entregamos e sumimos.",
+    "seg1-title": "Europa", "seg1-desc": "Portugal e Espanha. Contratos internacionais padronizados com SLA e NDA em todos os projetos.",
+    "seg2-title": "Brasil", "seg2-desc": "Atendimento remoto com suporte em português, contratos claros e entrega semanal.",
+    "seg3-title": "Prazo médio", "seg3-desc": "4 a 8 semanas para a primeira versão estável em produção, com deploys incrementais desde a semana 1.",
+    "faq-tag": "dúvidas", "faq-title": "Perguntas frequentes.",
+    "faq1-q": "Vocês mantêm sistemas que não foram desenvolvidos por vocês?", "faq1-a": "Sim. Avaliamos a integridade do código legado atual da sua empresa, propomos melhorias estruturais de performance e segurança e assumimos a manutenção contínua.",
+    "faq2-q": "Quem fica com o código-fonte ao final?", "faq2-a": "O código-fonte é 100% seu. Registramos toda a propriedade intelectual no seu nome ou no da sua empresa, garantindo total liberdade técnica.",
+    "faq3-q": "A hospedagem fica em contas da Tzori?", "faq3-a": "Não. Configuramos todo o ambiente de produção (AWS, Google Cloud, Vercel ou DigitalOcean) diretamente sob as suas credenciais financeiras e administrativas.",
+    "faq4-q": "Qual o prazo mínimo de um projeto?", "faq4-a": "Nossos projetos de automação operacional levam em média de 4 a 8 semanas para a primeira versão estável entrar em produção.",
+    "faq5-q": "Atendem empresas de quais países?", "faq5-a": "Atendemos clientes em regime remoto na Europa, Brasil e Estados Unidos, com contratos internacionais padronizados.",
+    "cta-tag": "próximo passo", "cta-title": "Pronto para eliminar<br>o <em>retrabalho?</em>", "cta-desc": "Diagnóstico gratuito. Sem compromisso. Mapeamos sua operação e mostramos o que é possível.",
+    "btn-whatsapp": "Falar no WhatsApp", "btn-email": "Enviar email", "cta-note": "✓ SLA + NDA em todos os projetos",
+    "footer-projects-label": "projetos →", "footer-copy": "© 2026 Tzori. — Todos os direitos reservados."
+  },
+  en: {
+    "nav-products": "Products", "nav-projects": "Projects", "nav-method": "Methodology", "nav-faq": "FAQ", "nav-contact": "Contact",
+    "btn-free-diag": "Free diagnosis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brazil",
+    "hero-title": "Three ways to take your operation <em>out of improvisation.</em>",
+    "hero-desc": "We build systems that centralize your operation, automate repetitive tasks with AI, and accelerate your growth with traffic and recruitment.",
+    "btn-request-diag": "Request diagnosis", "btn-view-products": "View products",
+    "metric-workers": "workers (JC)", "metric-works": "managed works", "metric-integrated": "integrated",
+    "tag-products": "products", "services-title": "Your entire operation,<br>automated and scalable.", "services-subtitle": "Forget operational friction. We deliver technology that solves real problems from end to end.",
+    "s1-name": "Systems", "s1-desc": "We build and maintain systems that replace spreadsheets. Gestão de Obras Pro combines facial/QR clock-in, sites, teams, accommodations, vehicles, and receipts.",
+    "s2-name": "Automation & AI", "s2-desc": "Repetitive work done automatically. We connect WhatsApp and spreadsheets with AI agents that verify data, report discrepancies, and generate automatic reports.",
+    "s3-name": "Growth", "s3-desc": "Clients and teams arriving via WhatsApp. Meta Ads campaigns, AI-produced creatives (video, audio, and image), and complete digital recruitment.",
+    "demo-badge": "100% Free Analysis", "demo-tag": "consulting", "demo-title": "We show you in 30 minutes where your operation wastes time.", "demo-desc": "We evaluate your manual processes, spreadsheets, and bottlenecks to show exactly what can be automated.", "btn-free-analysis": "Request free diagnosis",
+    "proj-tag": "real cases", "proj-title": "Projects that came to life.",
+    "p1-sector": "civil construction", "p1-name": "Construction Management Pro", "p1-desc": "Schedules, facial/QR clock-in, equipment, teams, and field reports integrated in real time.",
+    "label-before": "before", "label-after": "after", "b1": "Dispersed spreadsheets", "b2": "Manual reports", "b3": "No visibility", "a1": "Centralized system", "a2": "Automatic reports", "a3": "Real-time control",
+    "p2-sector": "missions", "p2-name": "Por Toda Terra", "p2-desc": "International website for a missions group with multilingual content and global reach.", "btn-view-project": "View project →",
+    "p3-sector": "third sector", "p3-name": "NGO Institutional Portal", "p3-desc": "International website for an NGO. Abandoned code turned into a real, functional product.",
+    "method-tag": "how we work", "method-title": "Code that works and keeps working.", "method-desc": "Every project begins with technical immersion into business rules. We deliver weekly and monitor post-launch.",
+    "m1-title": "Rules mapping", "m1-desc": "Technical immersion into business rules before writing the first line of code.",
+    "m2-title": "Weekly deliveries", "m2-desc": "Incremental deploys every week. Real progress, not feature promises.",
+    "m3-title": "Active support", "m3-desc": "Post-launch monitoring with defined SLA. We don't deliver and disappear.",
+    "seg1-title": "Europe", "seg1-desc": "Portugal and Spain. Standardized international contracts with SLA and NDA on all projects.",
+    "seg2-title": "Brazil", "seg2-desc": "Remote support in Portuguese, clear contracts, and weekly deliveries.",
+    "seg3-title": "Average timeline", "seg3-desc": "4 to 8 weeks for the first stable production version, with incremental deploys from week 1.",
+    "faq-tag": "faq", "faq-title": "Frequently asked questions.",
+    "faq1-q": "Do you maintain systems not developed by you?", "faq1-a": "Yes. We evaluate the integrity of your current legacy code, propose structural performance and security improvements, and take over ongoing maintenance.",
+    "faq2-q": "Who owns the source code at the end?", "faq2-a": "The source code is 100% yours. We register all intellectual property under your name or your company's name, ensuring full technical freedom.",
+    "faq3-q": "Is hosting managed under Tzori's accounts?", "faq3-a": "No. We configure the production environment (AWS, Google Cloud, Vercel, or DigitalOcean) directly under your financial and administrative credentials.",
+    "faq4-q": "What is the minimum project timeline?", "faq4-a": "Our operational automation projects take an average of 4 to 8 weeks for the first stable version to go live.",
+    "faq5-q": "Which countries do you serve?", "faq5-a": "We serve clients remotely in Europe, Brazil, and the United States, utilizing standardized international contracts.",
+    "cta-tag": "next step", "cta-title": "Ready to eliminate<br><em>rework?</em>", "cta-desc": "Free diagnosis. No obligation. We map your operation and show you what is possible.",
+    "btn-whatsapp": "Chat on WhatsApp", "btn-email": "Send email", "cta-note": "✓ SLA + NDA on all projects",
+    "footer-projects-label": "projects →", "footer-copy": "© 2026 Tzori. — All rights reserved."
+  },
+  es: {
+    "nav-products": "Productos", "nav-projects": "Proyectos", "nav-method": "Metodología", "nav-faq": "FAQ", "nav-contact": "Contacto",
+    "btn-free-diag": "Diagnóstico gratis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brasil",
+    "hero-title": "Tres formas de sacar tu operación <em>de la improvisación.</em>",
+    "hero-desc": "Creamos sistemas que centralizan tu operación, automatizamos tareas repetitivas con IA y aceleramos tu crecimiento con tráfico y reclutamiento.",
+    "btn-request-diag": "Solicitar diagnóstico", "btn-view-products": "Ver productos",
+    "metric-workers": "trabajadores (JC)", "metric-works": "obras gestionadas", "metric-integrated": "integrado",
+    "tag-products": "productos", "services-title": "Toda tu operación,<br>automatizada y escalable.", "services-subtitle": "Olvídate de la fricción operativa. Entregamos tecnología que resuelve problemas reales de principio a fin.",
+    "s1-name": "Sistemas", "s1-desc": "Creamos y mantenemos sistemas que reemplazan hojas de cálculo. Gestión de Obras Pro une control facial/QR, obras, equipos, alojamientos, vehículos y recibos.",
+    "s2-name": "Automatización & IA", "s2-desc": "El trabajo repetitivo hecho solo. Conectamos WhatsApp y hojas de cálculo con agentes de IA que verifican datos, avisan discrepancias y generan reportes automáticos.",
+    "s3-name": "Crecimiento", "s3-desc": "Clientes y equipos llegando por WhatsApp. Campañas en Meta Ads, creativos producidos con IA (video, audio e imagen) y reclutamiento digital completo.",
+    "demo-badge": "Análisis 100% gratuito", "demo-tag": "consultoría", "demo-title": "Te mostramos en 30 minutos dónde tu operación pierde tiempo.", "demo-desc": "Evaluamos tus procesos manuales, hojas de cálculo y cuellos de botella para mostrar exactamente qué se puede automatizar.", "btn-free-analysis": "Solicitar diagnóstico gratis",
+    "proj-tag": "casos reales", "proj-title": "Proyectos que salieron del papel.",
+    "p1-sector": "construcción civil", "p1-name": "Gestión de Obras Pro", "p1-desc": "Cronogramas, control facial/QR, equipos, plantillas y reportes de campo integrados en tiempo real.",
+    "label-before": "antes", "label-after": "después", "b1": "Hojas de cálculo dispersas", "b2": "Reportes manuales", "b3": "Sin visibilidad", "a1": "Sistema centralizado", "a2": "Reportes automáticos", "a3": "Control en tiempo real",
+    "p2-sector": "misiones", "p2-name": "Por Toda Terra", "p2-desc": "Sitio web internacional para grupo de misiones con contenido multilingüe y alcance global.", "btn-view-project": "Ver proyecto →",
+    "p3-sector": "tercer sector", "p3-name": "Portal Institucional ONG", "p3-desc": "Sitio internacional para ONG. Código obsoleto que transformamos en un producto real.",
+    "method-tag": "cómo trabajamos", "method-title": "Código que funciona y sigue funcionando.", "method-desc": "Cada proyecto comienza con inmersión técnica en las reglas de negocio. Entregamos semanalmente y monitoreamos tras el lanzamiento.",
+    "m1-title": "Mapeo de reglas", "m1-desc": "Inmersión técnica en las reglas de negocio antes de escribir la primera línea de código.",
+    "m2-title": "Entregas semanales", "m2-desc": "Despliegues incrementales cada semana. Progreso real, no promesas de funcionalidad.",
+    "m3-title": "Seguimiento activo", "m3-desc": "Monitoreo post-lanzamiento con SLA definido. No entregamos y desaparecemos.",
+    "seg1-title": "Europa", "seg1-desc": "Portugal y España. Contratos internacionales estandarizados con SLA y NDA en todos los proyectos.",
+    "seg2-title": "Brasil", "seg2-desc": "Atención remota con soporte en portugués, contratos claros y entrega semanal.",
+    "seg3-title": "Plazo medio", "seg3-desc": "4 a 8 semanas para la primera versión estable en producción, con despliegues incrementales desde la semana 1.",
+    "faq-tag": "dudas", "faq-title": "Preguntas frecuentes.",
+    "faq1-q": "¿Mantienen sistemas que no fueron desarrollados por ustedes?", "faq1-a": "Sí. Evaluamos la integridad do código heredado actual de su empresa, proponemos mejoras estructurales de rendimiento y seguridad, y asumimos el mantenimiento continuo.",
+    "faq2-q": "¿Quién se queda con o código fuente al final?", "faq2-a": "El código fuente es 100% suyo. Registramos toda la propiedad intelectual a su nombre o al de su empresa, garantizando total libertad técnica.",
+    "faq3-q": "¿El alojamiento se realiza en cuentas de Tzori?", "faq3-a": "No. Configuramos todo el entorno de producción (AWS, Google Cloud, Vercel o DigitalOcean) directamente bajo sus credenciales financieras y administrativas.",
+    "faq4-q": "¿Cuál es el plazo mínimo de un proyecto?", "faq4-a": "Nuestros proyectos de automatización operativa tardan una media de 4 a 8 semanas para que la primera versión estable entre en producción.",
+    "faq5-q": "¿A qué países prestan servicio?", "faq5-a": "Atendemos a clientes de forma remota en Europa, Brasil y Estados Unidos, con contratos internacionales estandarizados.",
+    "cta-tag": "próximo paso", "cta-title": "¿Listo para eliminar<br>el <em>retrabajo?</em>", "cta-desc": "Diagnóstico gratuito. Sem compromisso. Mapeamos su operación y mostramos lo que es posible.",
+    "btn-whatsapp": "Hablar en WhatsApp", "btn-email": "Enviar email", "cta-note": "✓ SLA + NDA en todos os projetos",
+    "footer-projects-label": "proyectos →", "footer-copy": "© 2026 Tzori. — Todos os direitos reservados."
+  }
+};
 
-        const languageSelect = document.getElementById("languageSelect");
+document.addEventListener('DOMContentLoaded', () => {
+  const themeBtn = document.getElementById('themeBtn');
+  const savedTheme = localStorage.getItem('tzori-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
 
-        function setLanguage(lang) {
-            // Guarda a preferência do usuário no navegador
-            localStorage.setItem("tzori-lang", lang);
-            languageSelect.value = lang;
-            
-            // Altera a tag lang do HTML para boas práticas de SEO
-            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang === 'en' ? 'en-US' : 'es-ES';
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('tzori-theme', newTheme);
+    });
+  }
 
-            // Varre o DOM traduzindo os elementos marcados
-            document.querySelectorAll("[data-i18n]").forEach(element => {
-                const key = element.getAttribute("data-i18n");
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
-            });
+  const languageSelect = document.getElementById("languageSelect");
+
+  function setLanguage(lang) {
+    localStorage.setItem("tzori-lang", lang);
+    if (languageSelect) languageSelect.value = lang;
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang === 'en' ? 'en-US' : 'es-ES';
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      const key = element.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        element.innerHTML = translations[lang][key];
+      }
+    });
+  }
+
+  if (languageSelect) {
+    languageSelect.addEventListener("change", (e) => setLanguage(e.target.value));
+  }
+
+  const savedLang = localStorage.getItem("tzori-lang") || "pt";
+  setLanguage(savedLang);
+
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('button').setAttribute('aria-expanded', 'false');
+        i.querySelector('.faq-body').style.maxHeight = '0';
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+
+  setTimeout(() => {
+    const cursor = document.getElementById('cursor');
+    if (cursor) cursor.classList.add('show');
+  }, 1000);
+
+  const navWrap = document.querySelector('.nav-wrap');
+  window.addEventListener('scroll', () => {
+    if (!navWrap) return;
+    navWrap.style.borderBottomColor = window.scrollY > 30
+      ? 'rgba(196,92,26,0.3)' : 'var(--border)';
+  }, { passive: true });
+
+  init3DCanvas();
+});
+
+function init3DCanvas() {
+  const canvas = document.getElementById('canvas-bg');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const particles = Array.from({ length: 50 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2 + 1,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4
+  }));
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    ctx.fillStyle = isDark ? 'rgba(196, 92, 26, 0.4)' : 'rgba(196, 92, 26, 0.25)';
+    ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.04)' : 'rgba(0, 0, 0, 0.04)';
+
+    particles.forEach((p, i) => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
         }
+      }
+    });
 
-        // Listener para capturar a mudança de idioma
-        languageSelect.addEventListener("change", (e) => {
-            setLanguage(e.target.value);
-        });
+    requestAnimationFrame(animate);
+  }
 
-        // Inicialização: Verifica se o usuário já escolheu um idioma antes, senão pega o padrão (PT)
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedLang = localStorage.getItem("tzori-lang") || "pt";
-            setLanguage(savedLang);
-        });
+  animate();
+}
+
+// Movimento 3D do Dashboard do Hero
+const liveDash = document.getElementById('heroLiveDashboard');
+
+if (liveDash) {
+  const stage = liveDash.parentElement;
+
+  stage.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotX = (-y / rect.height) * 14;
+    const rotY = (x / rect.width) * 14;
+
+    liveDash.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  });
+
+  stage.addEventListener('mouseleave', () => {
+    liveDash.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+  });
+}

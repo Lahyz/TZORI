@@ -1,464 +1,527 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tzori.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800&family=Playfair+Display:ital,wght@0,900;1,900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Estilização rápida do seletor de idiomas para manter o padrão premium */
-        .lang-selector {
-            background: transparent;
-            color: var(--text-black);
-            border: 1px solid var(--border-light);
-            padding: 0.4rem 0.6rem;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            border-radius: 4px;
-            cursor: pointer;
-            outline: none;
-        }
-        .dark-select {
-            color: #FFFFFF;
-            border-color: rgba(255,255,255,0.2);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tzori. — Sistemas, Automação & IA, Crescimento</title>
+<meta name="description" content="Três formas de tirar a sua operação do improviso. Sistemas, Automação & IA e Crescimento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header-container">
-        <nav class="navbar">
-            <a href="#" class="brand-logo">Tzori<span>.</span></a>
-            <ul class="nav-menu">
-                <li><a href="#servicos" data-i18n="nav-services">Serviços</a></li>
-                <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
-                <li><a href="#metodologia" data-i18n="nav-method">Metodologia</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
-            </ul>
-            
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <select id="languageSelect" class="lang-selector">
-                    <option value="pt">PT</option>
-                    <option value="en">EN</option>
-                    <option value="es">ES</option>
-                </select>
+<!-- Canvas 3D de Fundo Interativo -->
+<canvas id="canvas-bg"></canvas>
 
-                <a href="#contato" class="btn-diagnostico">
-                    <span class="icon-chat"></span> <span data-i18n="btn-free-diag">Diagnóstico Gratuito</span>
-                </a>
-            </div>
-        </nav>
-        
-        <div class="sub-header">
-            <span class="tech-tags">OPERATIONAL SYSTEMS</span>
-            <span class="location-tags" data-i18n="sub-locations">PORTUGAL · ESPANHA · BRASIL</span>
-        </div>        
-    </header>
+<!-- SITE -->
+<div id="site-content" class="visible">
 
-    <main class="hero-split">
-        <section class="hero-left">
-            <div class="hero-content">
-                <h1 class="main-title" data-i18n="hero-title">
-                    Processos <br>
-                    <span class="italic-orange">viram</span> <br>
-                    sistemas.
-                </h1>
-                <p class="hero-description" data-i18n="hero-desc">
-                    Eliminamos planilhas, tarefas manuais e operações desorganizadas. 
-                    Sistemas centralizados feitos sob medida para o seu negócio.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contato" class="btn-solid-dark" data-i18n="btn-request-diag">Solicitar Diagnóstico &rarr;</a>
-                    <a href="#servicos" class="btn-outline-dark" data-i18n="btn-view-services">Ver Serviços</a>
-                </div>
-            </div>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav>
+      <a class="nav-logo" href="#home">
+        <svg width="20" height="25" viewBox="0 0 20 25" fill="none">
+          <path d="M10 1.5 C10 1.5 1.5 11 1.5 16.5 a8.5 8.5 0 0 0 17 0 C18.5 11 10 1.5 10 1.5z" stroke="#c45c1a" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+          <circle cx="10" cy="17" r="2.5" fill="#c45c1a"/>
+        </svg>
+        Tzori.
+      </a>
+      <ul class="nav-links">
+        <li><a href="#produtos" data-i18n="nav-products">Produtos</a></li>
+        <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+        <li><a href="#metodologia" data-i18n="nav-method">Metodologia</a></li>
+        <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="themeBtn" class="btn-theme" title="Alternar Tema">☀️ / 🌙</button>
+        <select id="languageSelect" class="lang-select">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+        <a href="#contato" class="btn btn-primary" style="font-size:0.82rem;padding:0.6rem 1.2rem;" data-i18n="btn-free-diag">Diagnóstico grátis</a>
+      </div>
+    </nav>
+  </div>
 
-            <div class="metrics-row">
-                <div class="metric-item">
-                    <span class="metric-number">-80%</span>
-                    <span class="metric-label" data-i18n="metric-rework">RETRABALHO</span>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric-item">
-                    <span class="metric-number">+3×</span>
-                    <span class="metric-label" data-i18n="metric-prod">PRODUTIVIDADE</span>
-                </div>
-                <div class="metric-divider"></div>
-                <div class="metric-item">
-                    <span class="metric-number">100%</span>
-                    <span class="metric-label" data-i18n="metric-integrated">INTEGRADO</span>
-                </div>
-            </div>
-        </section>
-
-        <aside class="hero-right">
-            <div class="hero-right-bg"></div>
-            <div class="right-content">
-                <div class="section-top">
-                    <span class="right-kicker" data-i18n="kicker-active">// PROJETOS ATIVOS</span>
-                    <div class="projects-list">
-                        <div class="project-item">
-                            <div class="project-meta">
-                                <span class="proj-number">01</span>                                
-                            </div>
-                            <h4 class="proj-title">Gestão de Obras Pro</h4>
-                            <span class="proj-category" data-i18n="cat-civil">Construção Civil</span>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-meta">
-                                <span class="proj-number">02</span>                                
-                            </div>
-                            <h4 class="proj-title">Site Internacional de Missões</h4>
-                            <span class="proj-category" data-i18n="cat-missions">Missões</span>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-meta">
-                                <span class="proj-number">03</span>                                
-                            </div>
-                            <h4 class="proj-title">Portal Institucional ONG</h4>
-                            <span class="proj-category" data-i18n="cat-ong">ONG Global</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lighthouse-container">
-                    <span class="lighthouse-kicker">// LIGHTHOUSE SCORE</span>
-                    <div class="score-display">
-                        <span class="score-main">100</span>
-                        <span class="score-sub">/100</span>
-                    </div>
-                    <span class="score-label">Core Web Vitals — Google</span>
-                </div>
-            </div>
-        </aside>
-    </main>
-
-    <div class="manifesto-banner">
-        <div class="manifesto-content">
-            <h2 class="manifesto-title" data-i18n="manifesto-title">Não vendemos software.</h2>
-            <p class="manifesto-text" data-i18n="manifesto-desc">Vendemos controle, produtividade e escalabilidade.</p>
-            <span class="manifesto-date">© 2026 TZORI</span>
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-content-box">
+        <span class="hero-kicker" data-i18n="sub-locations">// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brasil</span>
+        <h1 class="hero-title" data-i18n="hero-title">Três formas de tirar a sua operação <em>do improviso.</em></h1>
+        <p class="hero-body" data-i18n="hero-desc">Criamos sistemas que centralizam sua operação, automatizamos tarefas repetitivas com IA e aceleramos seu crescimento com tráfego e recrutamento.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/351961177188" class="btn btn-primary" data-i18n="btn-request-diag">Solicitar diagnóstico</a>
+          <a href="#produtos" class="btn btn-ghost" data-i18n="btn-view-products">Ver produtos</a>
         </div>
+      </div>
+      
+      <!-- Bloco visual limpo -->
+      <!-- DASHBOARD VIVO DA HERO -->
+<div class="architecture-stage">
+  <div class="grid-background"></div>
+  
+  <div class="hero-live-dashboard" id="heroLiveDashboard">
+    <div class="dash-topbar">
+      <div class="dash-window-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <span class="dash-app-title">tzori.os // painel de controle</span>
+      <span class="dash-live-badge">ONLINE</span>
     </div>
 
-    <section id="servicos" class="section-row">
-        <div class="section-left-col">
-            <span class="section-num" data-i18n="sec-services-num">// 01 — SERVIÇOS</span>
-            <h2 class="section-heading-serif" data-i18n="sec-services-title">O que<br>fazemos.</h2>
+    <div class="dash-content-grid">
+      <!-- Card Principal -->
+      <div class="dash-widget widget-main">
+        <div class="widget-header">
+          <span class="widget-label">Status da Operação</span>
+          <span class="widget-icon">⚡</span>
         </div>
-        <div class="section-right-col">
-            <div class="list-services">
-                <div class="list-item">
-                    <span class="item-index">01</span>
-                    <div class="item-body">
-                        <h3 class="item-title" data-i18n="s1-title">Digitalização & Automação</h3>
-                        <p class="item-desc" data-i18n="s1-desc">Mapeamos e centralizamos operações que vivem em planilhas e processos manuais. O resultado é um sistema próprio que elimina retrabalho e gera visibilidade total.</p>
-                        <div class="item-tags">
-                            <span class="tech-tag" data-i18n="tag-processes">Processos</span>
-                            <span class="tech-tag" data-i18n="tag-automation">Automação</span>
-                            <span class="tech-tag" data-i18n="tag-integration">Integração</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <span class="item-index">02</span>
-                    <div class="item-body">
-                        <h3 class="item-title" data-i18n="s2-title">Evolução de Sistemas</h3>
-                        <p class="item-desc" data-i18n="s2-desc">Corrigimos performance, adicionamos funcionalidades e integramos APIs em sistemas legados. Sem reescrever do zero, sem perder o que já funciona.</p>
-                        <div class="item-tags">
-                            <span class="tech-tag">Legacy Code</span>
-                            <span class="tech-tag">Performance</span>
-                            <span class="tech-tag" data-i18n="tag-integrations">Integrações</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <span class="item-index">03</span>
-                    <div class="item-body">
-                        <h3 class="item-title" data-i18n="s3-title">Engenharia de Deploy</h3>
-                        <p class="item-desc" data-i18n="s3-desc">Infraestrutura estruturada sob contas do próprio cliente. CI/CD, containers, monitoramento e SLA definido. Controle total, zero lock-in.</p>
-                        <div class="item-tags">
-                            <span class="tech-tag">CI/CD</span>
-                            <span class="tech-tag">Cloud</span>
-                            <span class="tech-tag">SLA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="widget-value">100% Centralizada</div>
+        <div class="widget-bar-bg">
+          <div class="widget-bar-fill"></div>
         </div>
-    </section>
+      </div>
 
-    <div class="engineering-transition-banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-content">
-            <span class="banner-kicker" data-i18n="banner-kicker">// ENGENHARIA REAL</span>
-            <h2 class="banner-title" data-i18n="banner-title">
-                "Código que funciona <br>
-                <span class="accent-orange-text">e continua funcionando.</span>"
-            </h2>
+      <!-- Cards Secundários -->
+      <div class="dash-widget-row">
+        <div class="dash-widget widget-sub">
+          <span class="widget-label">Gestão de Obras Pro</span>
+          <div class="widget-sub-val">180 Colaboradores</div>
+          <div class="widget-sparkline">
+            <span style="height: 40%"></span>
+            <span style="height: 65%"></span>
+            <span style="height: 85%"></span>
+            <span style="height: 100%"></span>
+          </div>
         </div>
+
+        <div class="dash-widget widget-sub">
+          <span class="widget-label">Conferência IA</span>
+          <div class="widget-sub-val">Agente Ativo</div>
+          <div class="widget-status-pulse">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha do Terminal em Tempo Real -->
+      <div class="dash-terminal-footer">
+        <p><span class="accent-prompt">&gt;</span> IA: 300+ nomes conferidos via WhatsApp</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    
+    <div class="hero-metrics">
+      <div class="metric">
+        <span class="metric-val">180+</span>
+        <span class="metric-lbl" data-i18n="metric-workers">trabalhadores (JC)</span>
+      </div>
+      <div class="metric">
+        <span class="metric-val">37</span>
+        <span class="metric-lbl" data-i18n="metric-works">obras geridas</span>
+      </div>
+      <div class="metric">
+        <span class="metric-val">100%</span>
+        <span class="metric-lbl" data-i18n="metric-integrated">integrado</span>
+      </div>
+      <div class="metric">
+        <span class="metric-val">100</span>
+        <span class="metric-lbl">lighthouse score</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS (Substitui Serviços conforme a proposta) -->
+  <section class="services-section" id="produtos">
+    <div class="services-header">
+      <span class="tag" data-i18n="tag-products">produtos</span>
+      <h2 data-i18n="services-title">Sua operação inteira,<br>automatizada e escalável.</h2>
+      <p data-i18n="services-subtitle">Esqueça o atrito operacional. Entregamos tecnologia que resolve problemas reais de ponta a ponta[cite: 12, 13].</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <h3 class="service-name" data-i18n="s1-name">Sistemas</h3>
+        <p class="service-desc" data-i18n="s1-desc">Criamos e mantemos sistemas que substituem planilhas. O Gestão de Obras Pro junta ponto facial/QR, obras, equipes, alojamentos, veículos e recibos[cite: 12, 13].</p>
+        <div class="service-tags">
+          <span class="tag-pill">gestão de obras</span>
+          <span class="tag-pill">sistemas sob medida</span>
+          <span class="tag-pill">deploy</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <h3 class="service-name" data-i18n="s2-name">Automação & IA</h3>
+        <p class="service-desc" data-i18n="s2-desc">O trabalho repetitivo feito sozinho. Ligamos WhatsApp e planilhas com agentes de IA que conferem dados, avisam discrepâncias e geram relatórios automáticos[cite: 12, 13].</p>
+        <div class="service-tags">
+          <span class="tag-pill">whatsapp business</span>
+          <span class="tag-pill">agentes de ia</span>
+          <span class="tag-pill">relatórios excel/pdf</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <h3 class="service-name" data-i18n="s3-name">Crescimento</h3>
+        <p class="service-desc" data-i18n="s3-desc">Clientes e equipe chegando pelo WhatsApp. Campanhas no Meta Ads, criativos produzidos com IA (vídeo, áudio e imagem) e recrutamento digital completo[cite: 12, 13].</p>
+        <div class="service-tags">
+          <span class="tag-pill">meta ads</span>
+          <span class="tag-pill">criativos com ia</span>
+          <span class="tag-pill">recrutamento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section class="demo-section">
+    <div class="demo-inner container">
+      <div class="demo-terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-bar-label">tzori — diagnóstico</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">→</span> <span class="t-cmd">tzori scan</span> <span class="t-val">--url=seusite.com</span></div>
+          <div class="t-line"><span class="t-dim">Analisando operação e gargalos...</span></div>
+          <div class="t-line"><span class="t-ok">✓</span> <span class="t-dim">Tempo perdido mapeado</span></div>
+          <div class="t-line"><span class="t-ok">✓</span> <span class="t-dim">Automação de WhatsApp viável</span></div>
+          <div class="t-line"><span class="t-ok">✓</span> <span class="t-dim">30 minutos de consultoria direta</span></div>
+          <div class="t-line"><span class="t-prompt">→</span> <span class="t-cmd">diagnóstico pronto</span> <span class="cursor" id="cursor"></span></div>
+        </div>
+      </div>
+      <div class="demo-text">
+        <div class="demo-badge" data-i18n="demo-badge">Diagnóstico 100% gratuito</div>
+        <span class="tag" data-i18n="demo-tag">consultoria</span>
+        <h2 data-i18n="demo-title">Mostramos em 30 minutos onde a sua operação perde tempo[cite: 13].</h2>
+        <p data-i18n="demo-desc">Avaliamos seus processos manuais, planilhas e gargalos para mostrar exatamente o que dá para automatizar[cite: 13].</p>
+        <a href="https://wa.me/351961177188" class="btn btn-primary" data-i18n="btn-free-analysis">Solicitar diagnóstico grátis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGENHARIA & TECNOLOGIA -->
+  <div class="engineering-transition-banner">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <span class="banner-kicker">// ENGENHARIA REAL</span>
+      <h2 class="banner-title">
+        "Código que funciona <br>
+        <span class="accent-orange-text">e continua funcionando.</span>"
+      </h2>
+    </div>
+  </div>
+
+  <section class="pillars-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="header-left">
+          <span class="subtitle">// 02 — TECNOLOGIA</span>
+          <h2>Toda operação. <br> Um único sistema.</h2>
+        </div>
+        <div class="header-right">
+          <p>Uma única obsessão: sistemas que funcionam de verdade.</p>
+        </div>
+      </div>
+
+      <div class="pillars-content">
+        <div class="pillars-list">
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h3>Automação Inteligente</h3>
+              <p>Eliminamos tarefas repetitivas com lógica de negócio real, integrando WhatsApp e sistemas.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                <path d="M3 12A9 3 0 0 0 21 12"></path>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h3>Informação Centralizada</h3>
+              <p>Uma fonte de verdade. Todos os dados da operação acessíveis em um único painel[cite: 13].</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="pillar-text">
+              <h3>Preparado para Crescer</h3>
+              <p>Arquitetura que escala com o negócio. Sem refatorar do zero quando o volume aumenta.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillars-image-container">
+          <img src="https://tzoritech.com/imagens/infra.WEBP" alt="Infraestrutura de Servidores" class="pillars-image" loading="lazy">
+          <span class="image-caption">// INFRA SOB SEU CONTROLE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="projects-section" id="projetos">
+    <div class="projects-header">
+      <span class="tag" data-i18n="proj-tag">casos reais</span>
+      <h2 data-i18n="proj-title">Projetos que saíram do papel.</h2>
     </div>
 
-    <section class="pillars-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="header-left">
-                    <span class="subtitle" data-i18n="sec-tech-num">// 02 - TECNOLOGIA</span>
-                    <h2 data-i18n="sec-tech-title">Toda operação. <br> Um único sistema.</h2>
-                </div>
-                <div class="header-right">
-                    <p data-i18n="sec-tech-desc">Uma única obsessão: sistemas que funcionam de verdade.</p>
-                </div>
+    <div class="projects-list">
+      <div class="project-row">
+        <div class="project-info">
+          <span class="project-num">01</span>
+          <span class="project-sector" data-i18n="p1-sector">construção civil</span>
+          <h3 class="project-name" data-i18n="p1-name">Gestão de Obras Pro</h3>
+          <p class="project-desc" data-i18n="p1-desc">Cronogramas, ponto facial/QR, equipamentos, equipes e relatórios de campo integrados em tempo real[cite: 12, 13].</p>
+          <div class="transform-box">
+            <div class="t-before">
+              <span class="t-label" data-i18n="label-before">antes</span>
+              <ul>
+                <li data-i18n="b1">Planilhas dispersas</li>
+                <li data-i18n="b2">Relatórios manuais</li>
+                <li data-i18n="b3">Sem visibilidade</li>
+              </ul>
             </div>
-
-            <div class="pillars-content">
-                <div class="pillars-list">
-                    <div class="pillar-item">
-                        <div class="pillar-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <div class="pillar-text">
-                            <h3 data-i18n="p1-title">Automação Inteligente</h3>
-                            <p data-i18n="p1-desc">Eliminamos tarefas repetitivas com lógica de negócio real, não templates genéricos.</p>
-                        </div>
-                    </div>
-
-                    <div class="pillar-item">
-                        <div class="pillar-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
-                                <path d="M3 12A9 3 0 0 0 21 12"></path>
-                            </svg>
-                        </div>
-                        <div class="pillar-text">
-                            <h3 data-i18n="p2-title">Informação Centralizada</h3>
-                            <p data-i18n="p2-desc">Uma fonte de verdade. Todos os dados da operação acessíveis em um único sistema.</p>
-                        </div>
-                    </div>
-
-                    <div class="pillar-item">
-                        <div class="pillar-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
-                        </div>
-                        <div class="pillar-text">
-                            <h3 data-i18n="p3-title">Preparado para Crescer</h3>
-                            <p data-i18n="p3-desc">Arquitetura que escala com o negócio. Sem refatorar do zero quando o volume aumenta.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pillars-image-container">
-                    <img src="imagens/infra.WEBP" alt="Infraestrutura de Servidores" class="pillars-image">
-                    <span class="image-caption" data-i18n="image-caption">// INFRA SOB SEU CONTROLE</span>
-                </div>
+            <div class="t-after">
+              <span class="t-label" data-i18n="label-after">depois</span>
+              <ul>
+                <li data-i18n="a1">Sistema centralizado</li>
+                <li data-i18n="a2">Relatórios automáticos</li>
+                <li data-i18n="a3">Controle em tempo real</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="projetos" class="section-row">
-        <div class="section-left-col">
-            <span class="section-num" data-i18n="sec-projects-num">// 03 — PROJETOS</span>
-            <h2 class="section-heading-serif" data-i18n="sec-projects-title">Casos reais.</h2>
+        <div class="project-image">
+          <img src="https://tzoritech.com/imagens/contrustora1.webp" alt="Gestão de Obras Pro" loading="lazy">
         </div>
-        <div class="section-right-col">
-            <div class="cases-table">
-                <div class="case-row">
-                    <div class="case-meta-cell">
-                        <span class="case-num-small">01</span>
-                        <div>
-                            <span class="case-tag" data-i18n="proj1-tag">CONSTRUÇÃO CIVIL</span>
-                            <h3 class="case-row-title">Gestão de Obras Pro</h3>
-                        </div>
-                    </div>
-                    <div class="case-desc-cell">
-                        <p data-i18n="proj1-desc">Cronogramas, ponto, equipamento, equipes e relatórios de campo integrados em tempo real.</p>
-                    </div>
-                    <div class="case-img-cell">
-                        <img src="imagens/contrustora1.webp" alt="Gestão de Obras Pro" class="case-project-img">
-                    </div>
-                </div>
+      </div>
 
-                <div class="case-row">
-                    <div class="case-meta-cell">
-                        <span class="case-num-small">02</span>
-                        <div>
-                            <span class="case-tag" data-i18n="proj2-tag">SITE DE MISSÕES</span>
-                            <h3 class="case-row-title">Portal Internacional de Missões</h3>
-                        </div>
-                    </div>
-                    <div class="case-desc-cell">
-                        <p data-i18n="proj2-desc">Site para grupo de missões com conteúdo multilíngue para alcance global.</p>
-                    </div>
-                    <div class="case-img-cell">
-                        <img src="imagens/PTT.webp" alt="Portal Internacional de Missões" class="case-project-img">
-                    </div>
-                </div>
-
-                <div class="case-row">
-                    <div class="case-meta-cell">
-                        <span class="case-num-small">03</span>
-                        <div>
-                            <span class="case-tag" data-i18n="proj3-tag">TERCEIRO SETOR</span>
-                            <h3 class="case-row-title">Portal Institucional ONG</h3>
-                        </div>
-                    </div>
-                    <div class="case-desc-cell">
-                        <p data-i18n="proj3-desc">Site internacional para ONG. Código parado que transformamos em algo real.</p>
-                    </div>
-                    <div class="case-img-cell">
-                        <img src="imagens/eumaisum.webp" alt="Portal Institucional ONG" class="case-project-img">
-                    </div>
-                </div>
-            </div>
+      <div class="project-row">
+        <div class="project-image">
+          <img src="https://tzoritech.com/imagens/PTT.webp" alt="Por Toda Terra" loading="lazy">
         </div>
-    </section>
-
-    <section id="metodologia" class="section-row orange-theme">
-        <div class="section-left-col">
-            <span class="section-num" data-i18n="sec-method-num">// 04 — METODOLOGIA</span>
-            <h2 class="section-heading-serif" data-i18n="sec-method-title">Como trabalhamos.</h2>
+        <div class="project-info">
+          <span class="project-num">02</span>
+          <span class="project-sector" data-i18n="p2-sector">missões</span>
+          <h3 class="project-name" data-i18n="p2-name">Por Toda Terra</h3>
+          <p class="project-desc" data-i18n="p2-desc">Site internacional para grupo de missões com conteúdo multilíngue e alcance global.</p>
+          <a href="https://portodaterra.com.br" class="btn btn-ghost" style="margin-top:1.25rem; font-size:0.82rem;" target="_blank" data-i18n="btn-view-project">Ver projeto →</a>
         </div>
-        <div class="section-right-col">
-            <div class="metodologia-split">
-                <div class="metodologia-steps">
-                    <div class="step-card">
-                        <span class="step-num">01</span>
-                        <div>
-                            <h4 class="step-title" data-i18n="m1-title">Mapeamento de Regras</h4>
-                            <p class="step-desc" data-i18n="m1-desc">Imersão técnica nas regras de negócio antes de escrever a primeira linha de código.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <span class="step-num">02</span>
-                        <div>
-                            <h4 class="step-title" data-i18n="m2-title">Entregas Semanais</h4>
-                            <p class="step-desc" data-i18n="m2-desc">Deploys incrementais toda semana. Progresso real — não promessas de funcionalidade.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <span class="step-num">03</span>
-                        <div>
-                            <h4 class="step-title" data-i18n="m3-title">Acompanhamento Ativo</h4>
-                            <p class="step-desc" data-i18n="m3-desc">Monitoramento pós-lançamento com SLA definido. Não entregamos e sumimos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="metodologia-visual">
-                    <div class="metodologia-image-placeholder">
-                        <span class="img-caption" data-i18n="method-caption">TRABALHO EM EQUIPE</span>
-                        <img src="imagens/tzori.WEBP" alt="Metodologia de Trabalho" class="metodologia-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
 
-    <section id="faq" class="section-row">
-        <div class="section-left-col">
-            <span class="section-num">// 05 — FAQ</span>
-            <h2 class="section-heading-serif" data-i18n="sec-faq-title">Perguntas.</h2>
+      <div class="project-row">
+        <div class="project-info">
+          <span class="project-num">03</span>
+          <span class="project-sector" data-i18n="p3-sector">terceiro setor</span>
+          <h3 class="project-name" data-i18n="p3-name">Portal Institucional ONG</h3>
+          <p class="project-desc" data-i18n="p3-desc">Site internacional para ONG. Código parado que transformamos em algo real e funcional.</p>
         </div>
-        <div class="section-right-col">
-            <div class="accordion-group">
-                <details class="accordion-item" open>
-                    <summary class="accordion-header">
-                        <span data-i18n="q1-title">Vocês mantêm sistemas que não foram desenvolvidos por vocês?</span>
-                        <span class="accordion-arrow"></span>
-                    </summary>
-                    <div class="accordion-content">
-                        <p data-i18n="q1-desc">Sim. Avaliamos a integridade do código legado atual da sua empresa, propomos melhorias estruturais de performance e segurança e assumimos a manutenção contínua.</p>
-                    </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">
-                        <span data-i18n="q2-title">Quem fica com o código-fonte ao final?</span>
-                        <span class="accordion-arrow"></span>
-                    </summary>
-                    <div class="accordion-content">
-                        <p data-i18n="q2-desc">O código-fonte é 100% seu. Registramos toda a propriedade intelectual no seu nome ou no da sua empresa, garantindo total liberdade técnica.</p>
-                    </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">
-                        <span data-i18n="q3-title">A hospedagem fica em contas da TZORI?</span>
-                        <span class="accordion-arrow"></span>
-                    </summary>
-                    <div class="accordion-content">
-                        <p data-i18n="q3-desc">Não. Configuramos todo o ambiente de produção (AWS, Google Cloud, Vercel ou DigitalOcean) diretamente sob as suas credenciais financeiras e administrativas.</p>
-                    </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">
-                        <span data-i18n="q4-title">Qual o prazo mínimo de um projeto?</span>
-                        <span class="accordion-arrow"></span>
-                    </summary>
-                    <div class="accordion-content">
-                        <p data-i18n="q4-desc">Nossos projetos de automação operacional levam em média de 4 a 8 semanas para a primeira versão estável entrar em produção.</p>
-                    </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">
-                        <span data-i18n="q5-title">Atendem empresas de quais países?</span>
-                        <span class="accordion-arrow"></span>
-                    </summary>
-                    <div class="accordion-content">
-                        <p data-i18n="q5-desc">Atendemos clientes em regime remoto na Europa, Brasil e Estados Unidos, com contratos internacionais padronizados.</p>
-                    </div>
-                </details>
-            </div>
+        <div class="project-image">
+          <img src="https://tzoritech.com/imagens/eumaisum.webp" alt="Portal ONG" loading="lazy">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contato" class="contact-hero-dark">
-        <div class="contact-container">
-            <span class="contact-num" data-i18n="sec-contact-num">// CONTATO</span>
-            <h2 class="contact-main-title" data-i18n="contact-title">
-                Pronto para <br>
-                <span class="italic-orange">eliminar</span> <br>
-                o retrabalho?
-            </h2>
-            <p class="contact-sub" data-i18n="contact-desc">Diagnóstico gratuito. Sem compromisso. Mapeamos sua operação e mostramos o que é possível.</p>
-            
-            <div class="contact-actions">
-                <a href="https://wa.me/351961177188" class="btn-whatsapp-orange" data-i18n="btn-whatsapp">
-                     Iniciar Conversa no WhatsApp
-                </a>
-                <span class="contact-badge" data-i18n="contact-badge">✓ SLA + NDA em todos os projetos</span>
-            </div>
+  <!-- METODOLOGIA -->
+  <section class="method-section" id="metodologia">
+    <div class="method-inner container">
+      <div class="method-text">
+        <span class="tag" data-i18n="method-tag">como trabalhamos</span>
+        <h2 data-i18n="method-title">Código que funciona e continua funcionando.</h2>
+        <p data-i18n="method-desc">Cada projeto começa com imersão técnica nas regras de negócio. Entregamos semanalmente e monitoramos após o lançamento.</p>
+        <div class="method-img">
+          <img src="https://tzoritech.com/imagens/tzori.WEBP" alt="Equipa Tzori" loading="lazy">
         </div>
-    </section>
-
-    <footer class="footer-layout">
-        <div class="footer-content">
-            <div class="footer-left">
-                <span class="footer-logo">Tzori<span>.</span></span>
-                <span class="footer-sub">Operational Systems</span>
-            </div>
-            <div class="footer-middle">
-                <a href="https://jcconstrucciones.com" class="footer-client" target="_blank">JC Construcciones</a>
-                <a href="https://portodaterra.com" class="footer-client" target="_blank">Por Toda Terra</a>
-                <a href="https://vaidamnamoro.com" class="footer-client" target="_blank">Vai dar Namoro</a>
-                <a href="https://eumaismaisum.com" class="footer-client" target="_blank">Eu Mais Um</a>
-            </div>
-            <div class="footer-right">
-                <span data-i18n="footer-rights">© 2026 TZORI — Todos os direitos reservados</span>
-            </div>
+      </div>
+      <div class="method-steps">
+        <div class="method-step">
+          <div style="position:relative;width:2px;background:var(--border);margin-top:6px;flex-shrink:0;">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <h4 class="step-title" data-i18n="m1-title">Mapeamento de regras</h4>
+            <p class="step-desc" data-i18n="m1-desc">Imersão técnica nas regras de negócio antes de escrever a primeira linha de código.</p>
+          </div>
         </div>
-    </footer>
+        <div class="method-step">
+          <div style="position:relative;width:2px;background:var(--border);margin-top:6px;flex-shrink:0;">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <h4 class="step-title" data-i18n="m2-title">Entregas semanais</h4>
+            <p class="step-desc" data-i18n="m2-desc">Deploys incrementais toda semana. Progresso real, não promessas de funcionalidade.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div style="position:relative;width:2px;background:var(--border);margin-top:6px;flex-shrink:0;">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <h4 class="step-title" data-i18n="m3-title">Acompanhamento ativo</h4>
+            <p class="step-desc" data-i18n="m3-desc">Monitoramento pós-lançamento com SLA definido. Não entregamos e sumimos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- SEGMENTOS -->
+  <section class="segments-section">
+    <div class="segments-inner container">
+      <div class="segment">
+        <h4 class="segment-title" data-i18n="seg1-title">Europa</h4>
+        <p class="segment-desc" data-i18n="seg1-desc">Portugal e Espanha. Contratos internacionais padronizados com SLA e NDA em todos os projetos.</p>
+      </div>
+      <div class="segment">
+        <h4 class="segment-title" data-i18n="seg2-title">Brasil</h4>
+        <p class="segment-desc" data-i18n="seg2-desc">Atendimento remoto com suporte em português, contratos claros e entrega semanal.</p>
+      </div>
+      <div class="segment">
+        <h4 class="segment-title" data-i18n="seg3-title">Prazo médio</h4>
+        <p class="segment-desc" data-i18n="seg3-desc">4 a 8 semanas para a primeira versão estável em produção, com deploys incrementais desde a semana 1.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ (Atualizado e totalmente respondido conforme o relatório) -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <div class="faq-header">
+        <span class="tag" data-i18n="faq-tag">dúvidas</span>
+        <h2 data-i18n="faq-title">Perguntas frequentes.</h2>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q" data-i18n="faq1-q">Vocês mantêm sistemas que não foram desenvolvidos por vocês?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a" data-i18n="faq1-a">Sim. Avaliamos a integridade do código legado atual da sua empresa, propomos melhorias estruturais de performance e segurança e assumimos a manutenção contínua.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q" data-i18n="faq2-q">Quem fica com o código-fonte ao final?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a" data-i18n="faq2-a">O código-fonte é 100% seu. Registramos toda a propriedade intelectual no seu nome ou no da sua empresa, garantindo total liberdade técnica.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q" data-i18n="faq3-q">A hospedagem fica em contas da Tzori?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a" data-i18n="faq3-a">Não. Configuramos todo o ambiente de produção (AWS, Google Cloud, Vercel ou DigitalOcean) diretamente sob as suas credenciais financeiras e administrativas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q" data-i18n="faq4-q">Qual o prazo mínimo de um projeto?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a" data-i18n="faq4-a">Nossos projetos de automação operacional levam em média de 4 a 8 semanas para a primeira versão estável entrar em produção.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-q" data-i18n="faq5-q">Atendem empresas de quais países?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <p class="faq-a" data-i18n="faq5-a">Atendemos clientes em regime remoto na Europa, Brasil e Estados Unidos, com contratos internacionais padronizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTATO -->
+  <section id="contato">
+    <div class="cta-inner">
+      <span class="tag" data-i18n="cta-tag">próximo passo</span>
+      <h2 data-i18n="cta-title">Pronto para eliminar<br>o <em>retrabalho?</em></h2>
+      <p data-i18n="cta-desc">Diagnóstico gratuito. Sem compromisso. Mapeamos sua operação e mostramos o que é possível.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/351928339454" class="btn btn-primary" data-i18n="btn-whatsapp">Falar no WhatsApp</a>
+      </div>
+      <p class="cta-note" data-i18n="cta-note">✓ SLA + NDA em todos os projetos</p>
+    </div>
+  </section>
+
+  <!-- FOOTER (Com os 4 links corrigidos conforme o relatório) -->
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="#home">
+        <svg width="18" height="22" viewBox="0 0 20 25" fill="none">
+          <path d="M10 1.5 C10 1.5 1.5 11 1.5 16.5 a8.5 8.5 0 0 0 17 0 C18.5 11 10 1.5 10 1.5z" stroke="#c45c1a" stroke-width="1.6" fill="none"/>
+          <circle cx="10" cy="17" r="2.5" fill="#c45c1a"/>
+        </svg>
+        Tzori.
+      </a>
+      <ul class="footer-links">
+        <li><a href="#produtos" data-i18n="nav-products">Produtos</a></li>
+        <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+        <li><a href="#metodologia" data-i18n="nav-method">Metodologia</a></li>
+        <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+        <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
+      </ul>
+      <div class="footer-projects">
+        <span style="color:rgba(253,246,240,0.4);font-weight:500;" data-i18n="footer-projects-label">projetos →</span>
+        <a href="https://costruccionesjc.com" target="_blank">JC Construcciones</a>
+        <span class="fp-sep">·</span>
+        <a href="https://portodaterra.com.br" target="_blank">Por Toda Terra</a>
+        <span class="fp-sep">·</span>
+        <a href="https://vaidarnamoro.com" target="_blank">Vai dar Namoro</a>
+        <span class="fp-sep">·</span>
+        <a href="https://eumaisum.com" target="_blank">Eu Mais Um</a>
+      </div>
+      <span class="footer-copy" data-i18n="footer-copy">© 2026 Tzori. — Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+</div><!-- /site-content -->
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/351928339454" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
 </body>
 </html>
