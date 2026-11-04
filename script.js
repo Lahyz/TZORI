@@ -2,7 +2,7 @@ const translations = {
   pt: {
     "nav-products": "Produtos", "nav-projects": "Projetos", "nav-method": "Metodologia", "nav-faq": "FAQ", "nav-contact": "Contato",
     "btn-free-diag": "Diagnóstico grátis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brasil",
-    "hero-title": "Três formas de tirar a sua operação <em>do improviso.</em>",
+    "hero-title": "Processos viram <em>sistemas.</em>",
     "hero-desc": "Criamos sistemas que centralizam sua operação, automatizamos tarefas repetitivas com IA e aceleramos seu crescimento com tráfego e recrutamento.",
     "btn-request-diag": "Solicitar diagnóstico", "btn-view-products": "Ver produtos",
     "metric-workers": "trabalhadores (JC)", "metric-works": "obras geridas", "metric-integrated": "integrado",
@@ -36,7 +36,7 @@ const translations = {
   en: {
     "nav-products": "Products", "nav-projects": "Projects", "nav-method": "Methodology", "nav-faq": "FAQ", "nav-contact": "Contact",
     "btn-free-diag": "Free diagnosis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brazil",
-    "hero-title": "Three ways to take your operation <em>out of improvisation.</em>",
+    "hero-title": "Processes become <em>systems.</em>",
     "hero-desc": "We build systems that centralize your operation, automate repetitive tasks with AI, and accelerate your growth with traffic and recruitment.",
     "btn-request-diag": "Request diagnosis", "btn-view-products": "View products",
     "metric-workers": "workers (JC)", "metric-works": "managed works", "metric-integrated": "integrated",
@@ -70,7 +70,7 @@ const translations = {
   es: {
     "nav-products": "Productos", "nav-projects": "Proyectos", "nav-method": "Metodología", "nav-faq": "FAQ", "nav-contact": "Contacto",
     "btn-free-diag": "Diagnóstico gratis", "sub-locations": "// operational systems &nbsp;·&nbsp; portugal &nbsp;·&nbsp; brasil",
-    "hero-title": "Tres formas de sacar tu operación <em>de la improvisación.</em>",
+    "hero-title": "Procesos se convierten en <em>sistemas.</em>",
     "hero-desc": "Creamos sistemas que centralizan tu operación, automatizamos tareas repetitivas con IA y aceleramos tu crecimiento con tráfico y reclutamiento.",
     "btn-request-diag": "Solicitar diagnóstico", "btn-view-products": "Ver productos",
     "metric-workers": "trabajadores (JC)", "metric-works": "obras gestionadas", "metric-integrated": "integrado",
